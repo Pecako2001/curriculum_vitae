@@ -1,147 +1,111 @@
-<style>
-  .cv-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    font-family: Arial, sans-serif;
-    color: #333;
-    line-height: 1.5;
-    padding: 1rem;
-  }
-  .header {
-    text-align: center;
-    border-bottom: 2px solid #1976d2;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-  }
-  .header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    color: #1976d2;
-  }
-  .header p {
-    margin: 0.2rem 0;
-  }
-  h2 {
-    color: #e63946;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.3rem;
-    margin-top: 2rem;
-  }
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  li {
-    margin: 0.6rem 0;
-  }
-  .item-title {
-    font-weight: bold;
-  }
-  .item-sub {
-    font-style: italic;
-    color: #555;
-  }
-</style>
+# Curriculum Vitae Website
 
-<div class="cv-container">
-  <div class="header">
-    <h1>Koen van Wijlick</h1>
-    <p>Mechatronics Graduate & AI Engineer</p>
-    <p>📍 Panningen, Netherlands | 📞 +31 640167158 | ✉️ koenvanwijlick@gmail.com</p>
-    <p>🔗 <a href="https://www.linkedin.com/in/koen-van-wijlick-00b820204">LinkedIn Profile</a></p>
-  </div>
+An interactive, animated CV website showcasing Koen van Wijlick’s education, internships, work experience, and volunteer activities.
 
-  <h2>Education</h2>
-  <ul>
-    <li>
-      <span class="item-title">Fontys University of Applied Sciences, Venlo</span><br/>
-      <span class="item-sub">September 2021 – July 2025</span><br/>
-      Bachelor of Science in Mechatronics (HBO)
-    </li>
-    <li>
-      <span class="item-title">Gilde Opleidingen</span><br/>
-      <span class="item-sub">September 2017 – July 2021</span><br/>
-      Secondary Vocational Education (MBO) Level 4 in Mechatronics
-    </li>
-    <li>
-      <span class="item-title">Bouwens van der Boijecollege, Panningen</span><br/>
-      <span class="item-sub">September 2013 – July 2017</span><br/>
-      MAVO (Lower General Secondary Education)
-    </li>
-  </ul>
+---
 
-  <h2>Work Experience</h2>
-  <ul>
-    <li>
-      <span class="item-title">Mechatronic Machinery, Deurne</span><br/>
-      <span class="item-sub">January 2024 – Present</span><br/>
-      Software Engineer AI: Researched and applied AI techniques to optimize robotic systems.
-    </li>
-    <li>
-      <span class="item-title">Tinus, Panningen</span><br/>
-      <span class="item-sub">August 2022 – August 2023</span><br/>
-      Bar Staff: Managed customer service, advising on craft beers, and bar operations under pressure.
-    </li>
-    <li>
-      <span class="item-title">Restaurant Op d’n Berg, Helden</span><br/>
-      <span class="item-sub">March 2017 – August 2022</span><br/>
-      Service & Kitchen Staff: Oversaw staff coordination and ensured seamless service and kitchen flow.
-    </li>
-    <li>
-      <span class="item-title">Stichting Jong Nederland Helden</span><br/>
-      <span class="item-sub">September 2018 – Present</span><br/>
-      Volunteer Group Leader: Organized event logistics and managed tent setups.
-    </li>
-    <li>
-      <span class="item-title">Various Agricultural Companies</span><br/>
-      <span class="item-sub">February 2014 – November 2020</span><br/>
-      Cultivation Assistant & Quality Controller on strawberry, asparagus, and leek farms.
-    </li>
-  </ul>
-
-  <h2>Internships</h2>
-  <ul>
-    <li>
-      <span class="item-title">Mechatronic Machinery, Deurne</span><br/>
-      <span class="item-sub">August 2023 – January 2024</span><br/>
-      Developed an AI-based product detection concept for precise location mapping.
-    </li>
-    <li>
-      <span class="item-title">Kusters Engineering, Venlo</span><br/>
-      <span class="item-sub">February 2021 – July 2021</span><br/>
-      Designed a feed system concept for a shredder machine; delivered advisory & drawings.
-    </li>
-    <li>
-      <span class="item-title">Various Companies (Christiaens Group BV, WP Haton, Aliaxis)</span><br/>
-      <span class="item-sub">May 2018 – March 2019</span><br/>
-      Gained mechatronics experience: electrical schematics, Excel calculations, and cabinet assembly.
-    </li>
-  </ul>
-
-  <h2>Certifications</h2>
-  <ul>
-    <li>
-      <span class="item-title">SolidWorks Mechanical Design Associate</span><br/>
-      Issued May 2019 – Credential ID C-5SUCTJW3L4
-    </li>
-    <li>
-      <span class="item-title">Basisveiligheid VCA</span><br/>
-      Issued March 2018 – Expires March 2028 – Credential ID 541448.05174689
-    </li>
-  </ul>
-
-  <h2>Skills</h2>
-  <ul>
-    <li>Python, C++ (Robotics, AI, computer vision)</li>
-    <li>ROS 2, YOLO, OpenCV</li>
-    <li>Docker, Git, Linux</li>
-    <li>Siemens PLC (TIA Portal)</li>
-    <li>SolidWorks, AutoCAD</li>
-  </ul>
-
-  <h2>Languages</h2>
-  <ul>
-    <li>Dutch: Native</li>
-    <li>English: Good (Reading, Writing, Speaking)</li>
-  </ul>
+<div style="text-align:center; margin: 1rem 0;">
+  <img src="https://img.shields.io/badge/framework-Next.js-blue" alt="Next.js badge" />
+  <img src="https://img.shields.io/badge/ui-Mantine-green" alt="Mantine badge" />
+  <img src="https://img.shields.io/badge/animation-Framer_Motion-red" alt="Framer Motion badge" />
+  <img src="https://img.shields.io/badge/i18n-react--i18next-orange" alt="i18next badge" />
 </div>
+
+# Koen van Wijlick
+
+**Mechatronics Graduate & AI Engineer**
+
+📍 Panningen, Netherlands  
+📞 +31 640167158  
+✉️ [koenvanwijlick@gmail.com](mailto:koenvanwijlick@gmail.com)  
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/koen-van-wijlick-00b820204)
+
+---
+
+## 🎓 Education
+
+**Fontys University of Applied Sciences, Venlo**  
+*September 2021 – July 2025*  
+Bachelor of Science in Mechatronics (HBO)
+
+**Gilde Opleidingen**  
+*September 2017 – July 2021*  
+Secondary Vocational Education (MBO) Level 4 in Mechatronics
+
+**Bouwens van der Boijecollege, Panningen**  
+*September 2013 – July 2017*  
+MAVO (Lower General Secondary Education)
+
+---
+
+## 💼 Work Experience
+
+**Mechatronic Machinery, Deurne**  
+*January 2024 – Present*  
+- Software Engineer AI  
+- Researched and implemented AI techniques to optimize robotic systems.
+
+**Tinus, Panningen**  
+*August 2022 – August 2023*  
+- Bar Staff  
+- Advised customers on craft beers and managed bar operations under pressure.
+
+**Restaurant Op d’n Berg, Helden**  
+*March 2017 – August 2022*  
+- Service & Kitchen Staff  
+- Coordinated staff and ensured smooth service and kitchen workflows.
+
+**Stichting Jong Nederland Helden**  
+*September 2018 – Present*  
+- Volunteer Group Leader  
+- Organized event logistics and managed tent setups.
+
+**Various Agricultural Companies**  
+*February 2014 – November 2020*  
+- Cultivation Assistant & Quality Controller  
+- Harvested, sorted, and inspected crops on strawberry, asparagus, and leek farms.
+
+---
+
+## 🔧 Internships
+
+**Mechatronic Machinery, Deurne**  
+*August 2023 – January 2024*  
+- Developed an AI-based product detection concept for precise location mapping.
+
+**Kusters Engineering, Venlo**  
+*February 2021 – July 2021*  
+- Designed a feed system concept for a shredder machine; delivered advisory & drawings.
+
+**Various Companies (Christiaens Group BV, WP Haton, Aliaxis)**  
+*May 2018 – March 2019*  
+- Gained mechatronics experience: electrical schematics, Excel calculations, and cabinet assembly.
+
+---
+
+## 📜 Certifications
+
+- **SolidWorks Mechanical Design Associate**  
+  Issued May 2019 | Credential ID: C-5SUCTJW3L4
+
+- **Basisveiligheid VCA**  
+  Issued March 2018 | Expires March 2028 | Credential ID: 541448.05174689
+
+---
+
+## ⚙️ Skills
+
+- **Programming & AI**: Python, C++, ROS 2, YOLO, OpenCV  
+- **Dev Tools**: Docker, Git, Linux  
+- **CAD & PLC**: SolidWorks, AutoCAD, Siemens PLC (TIA Portal)  
+
+---
+
+## 🌐 Languages
+
+- Dutch: Native  
+- English: Fluent  
+
+---
+
+*...and many more to come…*
