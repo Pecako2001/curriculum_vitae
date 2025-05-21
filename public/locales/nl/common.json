@@ -1,0 +1,66 @@
+{
+  "intro": {
+    "greeting": "Hoi, ik ben",
+    "subtitle": "Mechatronica afgestudeerde & AI-engineer die autonome kasrobots bouwt.",
+    "viewJourney": "Bekijk mijn reis",
+    "downloadCV": "Download CV",
+    "takeRoad": "Volg het pad van mijn reis"
+  },
+  "career": {
+    "school1": {
+      "label": "Fontys Hogeschool Venlo",
+      "sub": "september 2021 – juli 2025",
+      "info": "Bachelor of Science in Mechatronica (HBO)"
+    },
+    "school2": {
+      "label": "Gilde Opleidingen",
+      "sub": "september 2017 – juli 2021",
+      "info": "Middelbaar Beroepsonderwijs (MBO) niveau 4 in Mechatronica"
+    },
+    "school3": {
+      "label": "Middelbare School, Bouwens van der Boijecollege, Panningen",
+      "sub": "september 2013 – juli 2017",
+      "info": "MAVO (Middelbaar Algemeen Voortgezet Onderwijs)"
+    },
+    "work1": {
+      "label": "Mechatronic Machinery, Deurne",
+      "sub": "januari 2024 – heden",
+      "info": "Software Engineer AI\nVerantwoordelijk voor het onderzoeken van nieuwe AI-technieken en het verkennen van hun toepassing op bestaande systemen voor optimalisatie."
+    },
+    "work2": {
+      "label": "Tinus, Panningen",
+      "sub": "augustus 2022 – augustus 2023",
+      "info": "Barpersoneel\nWerkte in een drukke bar gespecialiseerd in ambachtelijke bieren. Verantwoordelijk voor klantenadvies bij bierselectie, uitstekende service en zelfstandig barbeheer tijdens drukke diensten. Ontwikkelde sterke vaardigheden in klantenservice, efficiëntie en zelfstandig werken onder druk."
+    },
+    "work3": {
+      "label": "Restaurant Op d’n Berg, Helden",
+      "sub": "maart 2017 – augustus 2022",
+      "info": "Bediening, snackbar en keuken\nWerkte nauw samen met collega’s en vervulde een leidende rol in personeelsbeheer en het waarborgen van een soepele bedrijfsvoering."
+    },
+    "work4": {
+      "label": "Stichting Jong Nederland Helden",
+      "sub": "september 2018 – heden",
+      "info": "Vrijwilligerswerk\nGroepsleider en actief commissielid, verantwoordelijk voor tentenbeheer en logistiek bij evenementen."
+    },
+    "work5": {
+      "label": "Diverse Agrarische Bedrijven",
+      "sub": "februari 2014 – november 2020",
+      "info": "Werkzaam op aardbeien-, asperge- en preibedrijven als teeltmedewerker en kwaliteitscontroleur. Verantwoordelijk voor oogsten, sorteren en inspecteren van gewassen."
+    },
+    "internship1": {
+      "label": "Mechatronic Machinery, Deurne",
+      "sub": "augustus 2023 – januari 2024",
+      "info": "Bachelorstage (jaar 3)\nOntwikkelde een compleet concept voor productdetectie met AI om locaties nauwkeurig te bepalen."
+    },
+    "internship2": {
+      "label": "Kusters Engineering, Venlo",
+      "sub": "februari 2021 – juli 2021",
+      "info": "Afstudeerstage (MBO niveau 4, jaar 4)\nOntwierp een nieuw concept voor een invoersysteem van een shreddermachine. Leverde een compleet advies- en tekenpakket op. Vergaarde ervaring in projectmanagement, mijlpaalplanning en eisen-specificatie."
+    },
+    "internship3": {
+      "label": "Diverse bedrijven (Christiaens Group BV, WP Haton, Aliaxis)",
+      "sub": "mei 2018 – maart 2019",
+      "info": "Stage (MBO niveau 4, jaar 3)\nVerkreeg brede ervaring in mechatronica via meerdere stages. Taken: 2D-elektrische schema’s tekenen, Excel-berekeningen voor mechanische componenten, schakelkasten assembleren en afdelingsoverschrijdende samenwerking voor een sterke basis in industriële automatisering en ontwerp."
+    }
+  }
+}

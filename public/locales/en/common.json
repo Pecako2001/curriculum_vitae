@@ -1,0 +1,67 @@
+{
+  "intro": {
+    "greeting": "Hi, I’m",
+    "subtitle": "Mechatronics graduate & AI engineer building autonomous greenhouse robots.",
+    "viewJourney": "View my journey",
+    "downloadCV": "Download CV",
+    "takeRoad": "Take the road of my journey"
+  },
+  "career": {
+    "school1": {
+      "label": "Fontys University of Applied Sciences, Venlo",
+      "sub": "September 2021 – July 2025",
+      "info": "Bachelor of Science in Mechatronics (HBO)"
+    },
+    "school2": {
+      "label": "Gilde opleidingen",
+      "sub": "September 2017 – July 2021",
+      "info": "Secondary Vocational Education (MBO) Level 4 in Mechatronics"
+    },
+    "school3": {
+      "label": "Secondary School, Bouwens van der Boijecollege, Panningen",
+      "sub": "September 2013 – July 2017",
+      "info": "MAVO (Lower General Secondary Education)"
+    },
+    "work1": {
+      "label": "Mechatronic Machinery, Deurne",
+      "sub": "January 2024 – present",
+      "info": "Software Engineer AI\nResponsible for researching new techniques in artificial intelligence and exploring how they can be applied to current systems for optimization."
+    },
+    "work2": {
+      "label": "Tinus, Panningen",
+      "sub": "August 2022 until August 2023",
+      "info": "Bar staff\nWorked in a busy bar specializing in craft beers. Responsible for advising customers on beer selection, providing excellent service, and independently managing the bar during long and high-pressure shifts. Developed strong skills in customer service, efficiency, and working independently under pressure."
+    },
+    "work3": {
+      "label": "Restaurant Op d’n Berg, Helden",
+      "sub": "March 2017 to August 2022",
+      "info": "Service staff, snackbar and kitchen\nWorked closely with colleagues and was expected to take a leading role in managing staff and ensuring smooth operations across service and kitchen areas."
+    },
+    "work4": {
+      "label": "Stichting Jong Nederland Helden",
+      "sub": "September 2018 – present",
+      "info": "Volunteer Work\nGroup leader and active committee member responsible for managing tents and related logistics for events."
+    },
+    "work5": {
+      "label": "Various Agricultural Companies",
+      "sub": "February 2014 until November 2020",
+      "info": "Worked in strawberry, asparagus, and leek farms in roles such as cultivation assistant and quality controller. Responsible for harvesting, sorting, and inspecting crops."
+    },
+
+    "internship1": {
+      "label": "Mechatronic Machinery, Deurne",
+      "sub": "August 2023 to January 2024",
+      "info": "Bachelor internship (year 3)\nDeveloped a complete concept for detecting products using artificial intelligence to accurately determine locations."
+    },
+    "internship2": {
+      "label": "Kusters Engineering, Venlo",
+      "sub": "February 2021 to July 2021",
+      "info": "Graduation internship (MBO level 4, year 4)\nDesigned a new concept for a feed system for a shredder machine. Delivered a complete advisory and drawing package. Gained experience in project management, milestone planning, and requirements specification."
+    },
+    "internship3": {
+      "label": "Various Companies (Christiaens Group BV, WP Haton, Aliaxis)",
+      "sub": "May 2018 to March 2019",
+      "info": "Internship (MBO level 4, year 3)\nGained broad experience in mechatronics through multiple internships. Tasks: drawing 2D electrical schematics, Excel calculations for mechanical components, assembling control cabinets, and cross-department collaboration for a solid foundation in industrial automation and design."
+    }
+  }
+}
