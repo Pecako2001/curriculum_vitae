@@ -14,14 +14,14 @@ export default function SoftwareExperience() {
           </Title>
           <List spacing="xs" size="sm" withPadding>
             <List.Item>
-              <strong>SolidWorks Mechanical Design Associate</strong> – Issued: May
-              2019 – No Expiration, Credential ID: C-5SUCTJW3L4. Validated
-              proficiency in 3D CAD modeling, part design, assembly creation, and
-              technical drawings using SolidWorks.
+              <strong>SolidWorks Mechanical Design Associate</strong> – Issued:
+              May 2019 – No Expiration, Credential ID: C-5SUCTJW3L4. Validated
+              proficiency in 3D CAD modeling, part design, assembly creation,
+              and technical drawings using SolidWorks.
             </List.Item>
             <List.Item>
-              <strong>Basisveiligheid VCA</strong> – Issued: March 2018 – Expires:
-              March 2028, Credential ID: 541448.05174689. Certified in
+              <strong>Basisveiligheid VCA</strong> – Issued: March 2018 –
+              Expires: March 2028, Credential ID: 541448.05174689. Certified in
               occupational health and safety for working in high-risk
               environments according to Dutch/Belgian VCA standards.
             </List.Item>
@@ -31,8 +31,8 @@ export default function SoftwareExperience() {
           </Title>
           <List spacing="xs" size="sm" withPadding>
             <List.Item>
-              <strong>Python, C++</strong> – Robotics, AI, computer vision (YOLO,
-              ROS 2, OpenCV)
+              <strong>Python, C++</strong> – Robotics, AI, computer vision
+              (YOLO, ROS 2, OpenCV)
             </List.Item>
             <List.Item>
               <strong>React, TypeScript, JavaScript</strong> – Modern frontend
@@ -51,16 +51,16 @@ export default function SoftwareExperience() {
               control, and system operations
             </List.Item>
             <List.Item>
-              <strong>Siemens PLC (TIA Portal)</strong> – Industrial automation and
-              control systems
+              <strong>Siemens PLC (TIA Portal)</strong> – Industrial automation
+              and control systems
             </List.Item>
             <List.Item>
-              <strong>SolidWorks, Inventor, AutoCAD</strong> – 3D modeling and 2D
-              schematic design
+              <strong>SolidWorks, Inventor, AutoCAD</strong> – 3D modeling and
+              2D schematic design
             </List.Item>
             <List.Item>
-              <strong>Redis, WebSockets</strong> – In-memory data storage and live
-              data streaming
+              <strong>Redis, WebSockets</strong> – In-memory data storage and
+              live data streaming
             </List.Item>
             <List.Item>
               <strong>Next.js, MUI (Material UI)</strong> – Full-stack web

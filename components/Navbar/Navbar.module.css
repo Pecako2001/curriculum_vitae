@@ -1,0 +1,11 @@
+.link {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--primary);
+}
