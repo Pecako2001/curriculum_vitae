@@ -1,5 +1,5 @@
 import "@mantine/core/styles.css";
-import "../styles/globals.css"; // or './globals.css'
+import "../styles/globals.css";
 import React from "react";
 import {
   ColorSchemeScript,
@@ -43,23 +43,7 @@ export default function RootLayout({
       >
         <MantineProvider theme={theme} defaultColorScheme="auto">
           <AppShell
-            navbar={{
-              width: 260,
-              breakpoint: "sm",
-              collapsed: { desktop: false, mobile: false },
-            }}
-            header={{ height: 64, collapsed: false, offset: false }}
-            styles={{
-              main: {
-                background: "none",
-                minHeight: "100vh",
-                padding: rem(32),
-                paddingLeft: rem(300),
-                position: "relative",
-              },
-            }}
-          >
-            <AppShell.Navbar>
+            navbar={
               <div
                 style={{
                   background: "var(--surface-bg)",
@@ -125,8 +109,8 @@ export default function RootLayout({
                   </Group>
                 </nav>
               </div>
-            </AppShell.Navbar>
-            <AppShell.Header>
+            }
+            header={
               <header
                 style={{
                   background: "var(--surface-bg)",
@@ -149,7 +133,17 @@ export default function RootLayout({
                 </a>
                 <ColorSchemeToggle />
               </header>
-            </AppShell.Header>
+            }
+            styles={{
+              main: {
+                background: "none",
+                minHeight: "100vh",
+                padding: rem(32),
+                paddingLeft: rem(300),
+                position: "relative",
+              },
+            }}
+          >
             <I18nClientProvider>
               <main>{children}</main>
             </I18nClientProvider>
