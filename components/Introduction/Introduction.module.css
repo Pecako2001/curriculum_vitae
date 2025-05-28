@@ -39,6 +39,7 @@
   flex: 1 1 50%;
   position: relative;
   z-index: 2; /* Ensure content (including buttons) is above image/overlay */
+  pointer-events: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,6 +80,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
 }
 
 .socials {
