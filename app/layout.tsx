@@ -110,7 +110,7 @@ export default function RootLayout({
                       href="#certs"
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
-                      📜 Certifications
+                      💻 Software & Certifications
                     </a>
                     <a
                       href="#volunteer"
