@@ -10,14 +10,9 @@ import {
   Burger,
   Stack,
 } from "@mantine/core";
+import { useTranslation } from "react-i18next";
 import { useDisclosure } from "@mantine/hooks";
-import {
-  IconBrandTiktok,
-  IconBrandYoutube,
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-} from "@tabler/icons-react";
+import { IconBrandLinkedin } from "@tabler/icons-react";
 import classes from "./Navbar.module.css";
 
 const LINKS = [
@@ -25,12 +20,17 @@ const LINKS = [
   { label: "CONTACT", href: "/contact" },
 ];
 
-const SOCIALS = [
-  { href: "https://www.linkedin.com", Icon: IconBrandLinkedin },
+const SOCIALS = [{ href: "https://www.linkedin.com", Icon: IconBrandLinkedin }];
+
+const LANGS = [
+  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
+  { code: "en", label: "English", flag: "🇬🇧" },
 ];
 
 export default function Navbar() {
   const [opened, { toggle, close }] = useDisclosure(false);
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language || "nl";
 
   const navLinks = LINKS.map((link) => (
     <a key={link.href} href={link.href} className={classes.link}>
@@ -74,6 +74,21 @@ export default function Navbar() {
           <Group gap="xs" visibleFrom="sm" c="gray.0">
             {icons}
           </Group>
+          <nav className={classes.langSwitcher} aria-label="Language switcher">
+            {LANGS.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => i18n.changeLanguage(lang.code)}
+                className={`${classes.langBtn} ${
+                  currentLang === lang.code ? classes.langActive : ""
+                }`}
+                aria-label={lang.label}
+                type="button"
+              >
+                {lang.flag}
+              </button>
+            ))}
+          </nav>
           <Button
             component="a"
             href="/list-your-property"
@@ -118,6 +133,24 @@ export default function Navbar() {
           ))}
           <Group gap="xs" mt="md">
             {icons}
+          </Group>
+          <Group gap="xs">
+            {LANGS.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => {
+                  i18n.changeLanguage(lang.code);
+                  close();
+                }}
+                className={`${classes.langBtn} ${
+                  currentLang === lang.code ? classes.langActive : ""
+                }`}
+                aria-label={lang.label}
+                type="button"
+              >
+                {lang.flag}
+              </button>
+            ))}
           </Group>
         </Stack>
       </Drawer>

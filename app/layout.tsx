@@ -1,7 +1,7 @@
 "use client";
 
 import "@mantine/core/styles.css";
-import "./module.css"
+import "./module.css";
 import {
   MantineProvider,
   createTheme,
@@ -10,9 +10,7 @@ import {
   AppShell,
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
-import { useDisclosure } from "@mantine/hooks";
-import { usePathname } from "next/navigation";
-import Providers, { useTheme } from "./providers";
+import Providers from "./providers";
 import Navbar from "../components/Navbar/Navbar"; // Your custom Navbar component
 
 // Mantine theme configuration
@@ -61,7 +59,7 @@ function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <AppShell>
       <AppShell.Header>
-        <Navbar/>
+        <Navbar />
       </AppShell.Header>
 
       <AppShell.Main style={{ paddingTop: 60 }}>{children}</AppShell.Main>
@@ -69,7 +67,11 @@ function AppLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
