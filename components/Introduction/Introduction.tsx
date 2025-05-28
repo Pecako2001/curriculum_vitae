@@ -6,6 +6,7 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconMail,
+  IconRocket,
 } from "@tabler/icons-react";
 import styles from "./Introduction.module.css";
 import { motion } from "framer-motion";
@@ -84,6 +85,16 @@ export default function Introduction() {
             size="md"
           >
             {t("intro.downloadCV", "Download CV")}
+          </Button>
+          <Button
+            leftSection={<IconRocket size={18} />}
+            variant="outline"
+            radius="xl"
+            component="a"
+            href="/projects"
+            size="md"
+          >
+            {t("intro.viewProjects", "Projects")}
           </Button>
         </Group>
 

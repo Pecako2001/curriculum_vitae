@@ -68,6 +68,7 @@ export default function ProjectsPage() {
                 ) : (
                   <video controls style={{ width: "100%" }}>
                     <source src={project.video} type="video/mp4" />
+                    <track kind="captions" />
                   </video>
                 )}
               </AspectRatio>

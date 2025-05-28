@@ -1,4 +1,4 @@
-import { Anchor, Text, Title, Group, Badge, Box } from "@mantine/core";
+import { Text, Title, Group, Badge, Box } from "@mantine/core";
 import classes from "./Welcome.module.css";
 
 export function Welcome() {
