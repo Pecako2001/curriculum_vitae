@@ -6,6 +6,7 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
 import classes from "./projects.module.css";
 
 export interface Project {
@@ -73,6 +74,7 @@ const projects: Project[] = [
 const sorted = [...projects].sort((a, b) => b.year - a.year);
 
 export default function ProjectsPage() {
+  const { t } = useTranslation();
   return (
     <section id="projects" className={classes.wrapper}>
       <div className={classes.container}>
@@ -84,11 +86,11 @@ export default function ProjectsPage() {
           }}
         >
           <Button component="a" href="/" variant="light" radius="xl">
-            Back to main page
+            {t("projects.back")}
           </Button>
         </div>
 
-        <h1 className={classes.headingPrimary}>My Projects</h1>
+        <h1 className={classes.headingPrimary}>{t("projects.heading")}</h1>
 
         {sorted.map((project, idx) => {
           const side = idx % 2 === 0 ? classes.right : classes.left;
