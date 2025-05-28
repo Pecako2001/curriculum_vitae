@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 4rem 1rem;
+}
+
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.certs {
+  margin-top: 1.5rem;
+}

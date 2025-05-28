@@ -1,0 +1,41 @@
+.wrapper {
+  background: #0d1117;
+  color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.tagline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.left,
+.right {
+  flex: 1 1 45%;
+}
+
+.quote {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  padding: 1rem;
+  border-radius: 8px;
+  font-style: italic;
+}
