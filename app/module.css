@@ -1,18 +1,29 @@
 :root {
-  --accent: #e06c34; /* burnt‑orange accent pulled from screenshots */
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #0070f3;
+  --accent: #e06c34;
   --bg-dark: #0d0d0d;
+  --dark-bg: #0d0d0d;
   --card-bg: #181818f2;
   --card-radius: 18px;
   --navbar-bg: #ffffff;
   --navbar-color: #000000;
+  --light-text: #f5f5f5;
+  --gap-inline: 2rem;
+  --white: #ffffff;
+  --muted-text: #adadad;
+  --muted-text-light: #d0d0d0;
+  --gradient-start: #ff512f;
+  --gradient-end: #dd2476;
+  --social-bg: #d3d3d3;
+  --accent-hover: #f07d46;
 }
 
-.theme-dark {
+.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --primary-color: #1e90ff;
   --navbar-bg: #333333;
   --navbar-color: #ffffff;
-}
-
-.theme-light {
-  --navbar-bg: #ffffff;
-  --navbar-color: #000000;
 }
