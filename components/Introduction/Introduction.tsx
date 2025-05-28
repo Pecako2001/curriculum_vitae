@@ -1,23 +1,28 @@
 // components/Introduction/Introduction.tsx
-'use client';
-import React from 'react';
-import { Button, Avatar, Group } from '@mantine/core';
-import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-react';
-import styles from './Introduction.module.css';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+"use client";
+import React from "react";
+import { Button, Avatar, Group } from "@mantine/core";
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+} from "@tabler/icons-react";
+import styles from "./Introduction.module.css";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const LANGS = [
-  { code: 'nl', label: 'Nederlands', flag: '🇳🇱' },
-  { code: 'en', label: 'English', flag: '🇬🇧' },
+  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
+  { code: "en", label: "English", flag: "🇬🇧" },
 ];
 
 export default function Introduction() {
   const { t, i18n } = useTranslation();
-  const currentLang = i18n.language || 'nl';
+  const currentLang = i18n.language || "nl";
 
   // PDF per language
-  const cvPdf = currentLang === 'en' ? '/Koen_van_Wijlick_CV_EN.pdf' : '/Koen_van_Wijlick_CV.pdf';
+  // Only the English CV PDF is available, so use it for all languages
+  const cvPdf = "/Koen_van_Wijlick_CV_EN.pdf";
 
   return (
     <section id="intro" className={styles.wrapper}>
@@ -27,7 +32,7 @@ export default function Introduction() {
           <button
             key={lang.code}
             onClick={() => i18n.changeLanguage(lang.code)}
-            className={`${styles.langBtn} ${currentLang === lang.code ? styles.langActive : ''}`}
+            className={`${styles.langBtn} ${currentLang === lang.code ? styles.langActive : ""}`}
             aria-label={lang.label}
             type="button"
           >
@@ -39,7 +44,7 @@ export default function Introduction() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className={styles.card}
       >
         <Avatar
@@ -50,12 +55,15 @@ export default function Introduction() {
         />
 
         <h1 className={styles.title}>
-          {t('intro.greeting', 'Hi, I’m')}{' '}
+          {t("intro.greeting", "Hi, I’m")}{" "}
           <span className={styles.gradient}>Koen&nbsp;van&nbsp;Wijlick.</span>
         </h1>
 
         <p className={styles.subtitle}>
-          {t('intro.subtitle', 'Mechatronics graduate & AI engineer building autonomous greenhouse robots.')}
+          {t(
+            "intro.subtitle",
+            "Mechatronics graduate & AI engineer building autonomous greenhouse robots.",
+          )}
         </p>
 
         <Group justify="center" mt="md" gap="sm">
@@ -66,7 +74,7 @@ export default function Introduction() {
             href="#career"
             size="md"
           >
-            {t('intro.viewJourney', 'View my journey')}
+            {t("intro.viewJourney", "View my journey")}
           </Button>
           <Button
             variant="default"
@@ -75,18 +83,33 @@ export default function Introduction() {
             href={cvPdf}
             size="md"
           >
-            {t('intro.downloadCV', 'Download CV')}
+            {t("intro.downloadCV", "Download CV")}
           </Button>
         </Group>
 
-        <Group justifyContent="center" mt="lg" gap="xs" className={styles.socials}>
+        <Group
+          justifyContent="center"
+          mt="lg"
+          gap="xs"
+          className={styles.socials}
+        >
           <a href="mailto:koenvanwijlick@gmail.com" aria-label="Email">
             <IconMail size={26} />
           </a>
-          <a href="https://github.com/Pecako2001" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a
+            href="https://github.com/Pecako2001"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
             <IconBrandGithub size={26} />
           </a>
-          <a href="https://www.linkedin.com/in/koen-van-wijlick-00b820204/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/koen-van-wijlick-00b820204/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <IconBrandLinkedin size={26} />
           </a>
         </Group>
@@ -97,22 +120,28 @@ export default function Introduction() {
         initial={{ y: 0 }}
         animate={{ y: [0, 16, 0] }}
         transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-        >
+      >
         <span className={styles.arrowText}>
-            {t('intro.takeRoad', 'Take the road of my journey')}
+          {t("intro.takeRoad", "Take the road of my journey")}
         </span>
         <svg
-            className={styles.arrowIcon}
-            width="36"
-            height="36"
-            viewBox="0 0 36 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
+          className={styles.arrowIcon}
+          width="36"
+          height="36"
+          viewBox="0 0 36 36"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
-            <path d="M18 6V30M18 30L8 20M18 30L28 20" stroke="#1976d2" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+          <path
+            d="M18 6V30M18 30L8 20M18 30L28 20"
+            stroke="#1976d2"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
-        </motion.div>
+      </motion.div>
     </section>
   );
 }
