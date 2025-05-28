@@ -2,7 +2,7 @@
 .wrapper {
   position: relative;
   padding: clamp(4rem, 7vw, 6rem) 1rem;
-  background: var(--bg-color);
+  background: transparent;
   display: flex;
   justify-content: center;
   color: var(--light-text);

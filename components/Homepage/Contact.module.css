@@ -1,6 +1,6 @@
 /* SECTION WRAPPER */
 .wrapper {
-  background: var(--bg-color);
+  background: transparent;
   padding: clamp(4rem, 7vw, 6rem) 1rem;
   display: flex;
   justify-content: center;

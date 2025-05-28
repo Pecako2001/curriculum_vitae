@@ -2,7 +2,7 @@
     position: relative;
     padding: clamp(4rem, 7vw, 6rem) 1rem;
     display: flex;
-    background: var(--bg-color);
+    background: transparent;
     justify-content: center;
     color: var(--light-text);
 

@@ -1,7 +1,7 @@
 
 /* Section wrapper */
 .wrapper {
-    background: var(--bg-color);
+    background: transparent;
     padding: clamp(4rem, 8vw, 7rem) 1rem;
     display: flex;
     justify-content: center;

@@ -38,7 +38,25 @@
   --navbar-bg: #666666;
   --navbar-color: #ffffff;
   --accent: #e06c34;
+  --accent-rgb: 224 108 52;
   --gradient-start: #ff512f;
   --accent-hover: #f07d46;
   --gradient-end: #dd2476;
+}
+
+body {
+  position: relative;
+  background: var(--bg-color);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(at top left, rgb(var(--accent-rgb) / 0.2), transparent 60%),
+    radial-gradient(at bottom right, rgb(var(--accent-rgb) / 0.15), transparent 60%);
+  filter: blur(160px);
+  z-index: -1;
+  pointer-events: none;
 }
