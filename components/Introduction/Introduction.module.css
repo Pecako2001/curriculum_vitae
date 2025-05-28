@@ -13,6 +13,7 @@
   min-height: 60vh;
   position: relative;
   overflow: hidden;
+  z-index: 0;
 }
 
 .image > img {
@@ -29,13 +30,15 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none; /* Prevent overlay from blocking clicks */
 }
 
 /* ──────── RIGHT : CONTENT ────────*/
 .content {
   flex: 1 1 50%;
   position: relative;
-  z-index: 1;
+  z-index: 2; /* Ensure content (including buttons) is above image/overlay */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,6 +77,7 @@
 .buttons {
   padding-left: 2rem;
   display: flex;
+  color: var(--accent);
   flex-wrap: wrap;
   gap: 0.75rem;
 }
@@ -102,9 +106,9 @@
 
 /* Arrow bounce */
 .arrowWrap {
-  padding-left: 2rem;
+  padding-left: 3rem;
   position: absolute;
-  bottom: 3rem;
+  bottom: 7rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -195,7 +199,8 @@
   left: 0;
   width: 100%;
   height: clamp(4rem, 8vw, 6rem);
-  pointer-events: none;
+  pointer-events: none; /* Prevent wrapper overlay from blocking clicks */
+  z-index: 1;
 }
 
 /* Utility for visually hidden elements (a11y) */

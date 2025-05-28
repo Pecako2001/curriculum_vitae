@@ -51,28 +51,33 @@ export default function Introduction() {
           <Button
             variant="light"
             radius="xl"
+            size="md"
             component="a"
             href="#career"
-            size="md"
+            leftSection={<IconRocket size={18} />}
+            style={{ textTransform: "none" }}
           >
             {t("intro.viewJourney", "View my journey")}
           </Button>
           <Button
             variant="default"
             radius="xl"
+            size="md"
             component="a"
             href={cvPdf}
-            size="md"
+            download
+            style={{ textTransform: "none" }}
           >
             {t("intro.downloadCV", "Download CV")}
           </Button>
           <Button
-            leftSection={<IconRocket size={18} />}
             variant="outline"
             radius="xl"
+            size="md"
             component="a"
             href="/projects"
-            size="md"
+            leftSection={<IconRocket size={18} />}
+            style={{ textTransform: "none" }}
           >
             {t("intro.viewProjects", "Projects")}
           </Button>
