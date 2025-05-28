@@ -30,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang={i18n.language}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Curriculum Vitae</title>
         <link rel="icon" href="/Icon.png" />
       </head>
