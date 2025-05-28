@@ -21,21 +21,11 @@ import {
 import classes from "./Navbar.module.css";
 
 const LINKS = [
-  { label: "ABOUT", href: "/about" },
-  { label: "PROPERTIES", href: "/properties" },
-  { label: "ADVERTISE", href: "/advertise" },
-  { label: "SELLERS", href: "/sellers" },
-  { label: "BUYERS", href: "/buyers" },
-  { label: "RESOURCES", href: "/resources" },
-  { label: "NEWS", href: "/news" },
+  { label: "PROJECTS", href: "/projects" },
   { label: "CONTACT", href: "/contact" },
 ];
 
 const SOCIALS = [
-  { href: "https://www.tiktok.com", Icon: IconBrandTiktok },
-  { href: "https://www.youtube.com", Icon: IconBrandYoutube },
-  { href: "https://www.facebook.com", Icon: IconBrandFacebook },
-  { href: "https://www.instagram.com", Icon: IconBrandInstagram },
   { href: "https://www.linkedin.com", Icon: IconBrandLinkedin },
 ];
 
@@ -129,15 +119,6 @@ export default function Navbar() {
           <Group gap="xs" mt="md">
             {icons}
           </Group>
-          <Button
-            component="a"
-            href="/list-your-property"
-            variant="outline"
-            style={{ fontWeight: 700, textTransform: "uppercase" }}
-            onClick={close}
-          >
-            ADD A LISTING
-          </Button>
         </Stack>
       </Drawer>
     </Box>

@@ -1,12 +1,11 @@
+// components/ProjectsPage/ProjectsPage.tsx
+"use client";
 import {
   Badge,
-  Container,
   Button,
   Group,
   Paper,
-  SimpleGrid,
   Text,
-  Title,
   ActionIcon,
 } from "@mantine/core";
 import {
@@ -14,6 +13,7 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+import classes from "./projects.module.css";
 
 export interface Project {
   title: string;
@@ -73,97 +73,96 @@ export const projects: Project[] = [
 
 export default function ProjectsPage() {
   return (
-    <Container size="lg" py="xl">
-      <Group justify="center" mb="md">
-        <Button component="a" href="/" variant="light" radius="xl">
-          Back to main page
-        </Button>
-      </Group>
-      <Title order={1} ta="center" mb="xl">
-        My Projects
-      </Title>
-      <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="xl">
-        {projects.map((project) => (
-          <Paper key={project.title} shadow="md" radius="md" p="md" withBorder>
-            <Title order={3}>{project.title}</Title>
-            <Badge variant="light" mt="xs" mb="sm">
-              {project.tag}
-            </Badge>
-            {project.video &&
-              (project.video.match(/\.(jpeg|jpg|png|gif|webp)$/i) ? (
-                <img
-                  src={project.video}
-                  alt={project.title}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: 8,
-                    display: "block",
-                    marginBottom: "1rem",
-                  }}
-                />
-              ) : (
-                <video
-                  controls
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: 8,
-                    display: "block",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  <source src={project.video} type="video/mp4" />
-                  <track kind="captions" />
-                </video>
-              ))}
-            <Text>{project.description}</Text>
-            {(project.website || project.github || project.linkedin) && (
-              <Group mt="sm" gap="xs">
-                {project.website && (
-                  <ActionIcon
-                    component="a"
-                    href={project.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Website"
-                    variant="subtle"
-                    size="lg"
-                  >
-                    <IconWorld size={24} />
-                  </ActionIcon>
-                )}
-                {project.github && (
-                  <ActionIcon
-                    component="a"
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    variant="subtle"
-                    size="lg"
-                  >
-                    <IconBrandGithub size={24} />
-                  </ActionIcon>
-                )}
-                {project.linkedin && (
-                  <ActionIcon
-                    component="a"
-                    href={project.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    variant="subtle"
-                    size="lg"
-                  >
-                    <IconBrandLinkedin size={24} />
-                  </ActionIcon>
-                )}
-              </Group>
-            )}
-          </Paper>
-        ))}
-      </SimpleGrid>
-    </Container>
+    <section id="projects" className={classes.wrapper}>
+      <div className={classes.container}>
+        {/* Back button */}
+        <div className={classes.backBtn}>
+          <Button component="a" href="/" variant="light" radius="xl">
+            Back to main page
+          </Button>
+        </div>
+
+        <h1 className={classes.headingPrimary}>My Projects</h1>
+
+        <div className={classes.grid}>
+          {projects.map((project) => (
+            <Paper
+              key={project.title}
+              withBorder={false}
+              shadow="md"
+              className={classes.card}
+            >
+              <h3 className={classes.cardTitle}>{project.title}</h3>
+              <Badge className={classes.cardTag} size="md" mb="sm">
+                {project.tag}
+              </Badge>
+
+              {project.video &&
+                (project.video.match(/\.(jpeg|jpg|png|gif|webp)$/i) ? (
+                  <img
+                    src={project.video}
+                    alt={project.title}
+                    className={classes.media}
+                  />
+                ) : (
+                  <video controls className={classes.media}>
+                    <source src={project.video} type="video/mp4" />
+                    <track kind="captions" />
+                  </video>
+                ))}
+
+              <Text>{project.description}</Text>
+
+              {(project.website || project.github || project.linkedin) && (
+                <Group className={classes.actions} gap="xs">
+                  {project.website && (
+                    <ActionIcon
+                      className={classes.iconBtn}
+                      component="a"
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Website"
+                      size="lg"
+                      variant="subtle"
+                    >
+                      <IconWorld size={24} />
+                    </ActionIcon>
+                  )}
+                  {project.github && (
+                    <ActionIcon
+                      className={classes.iconBtn}
+                      component="a"
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub"
+                      size="lg"
+                      variant="subtle"
+                    >
+                      <IconBrandGithub size={24} />
+                    </ActionIcon>
+                  )}
+                  {project.linkedin && (
+                    <ActionIcon
+                      className={classes.iconBtn}
+                      component="a"
+                      href={project.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      size="lg"
+                      variant="subtle"
+                    >
+                      <IconBrandLinkedin size={24} />
+                    </ActionIcon>
+                  )}
+                </Group>
+              )}
+            </Paper>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

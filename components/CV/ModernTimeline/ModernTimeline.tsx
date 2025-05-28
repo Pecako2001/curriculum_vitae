@@ -1,3 +1,4 @@
+// components/ModernTimeline/ModernTimeline.tsx
 "use client";
 import React, { useMemo, useRef } from "react";
 import { Title, Text, Paper, Stack } from "@mantine/core";
@@ -120,9 +121,10 @@ export default function ModernTimeline() {
     <section id="career" className={classes.wrapper}>
       <div className={classes.bg} style={{ backgroundImage: `url(${bg})` }} />
       <div className={classes.inner}>
-        <Stack>
-          {sections.map((entry) => (
-            <TimelineEntry key={entry.id} entry={entry} />
+        {/* using Stack keeps vertical rhythm on mobile */}
+        <Stack gap="xl">
+          {sections.map((entry, idx) => (
+            <TimelineEntry key={entry.id} entry={entry} index={idx} />
           ))}
         </Stack>
       </div>
@@ -130,17 +132,18 @@ export default function ModernTimeline() {
   );
 }
 
-function TimelineEntry({ entry }: { entry: Entry }) {
-  const ref = useRef(null);
+function TimelineEntry({ entry, index }: { entry: Entry; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px 0px" });
 
+  /* category headings */
   if (entry.type === "category") {
     return (
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.45 }}
       >
         <Title order={2} className={classes.category} id={entry.id}>
           {entry.label}
@@ -149,22 +152,23 @@ function TimelineEntry({ entry }: { entry: Entry }) {
     );
   }
 
+  /* timeline card */
+  const sideClass = index % 2 === 0 ? classes.right : classes.left; // alternate
+
   return (
     <motion.div
       ref={ref}
-      className={classes.entry}
+      className={`${classes.entry} ${sideClass}`}
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.45 }}
     >
-      <Paper shadow="md" p="md" radius="md">
+      <Paper withBorder={false} shadow="lg" className={classes.card}>
         <Title order={3} className={classes.title}>
           {entry.label}
         </Title>
         {entry.sub && (
-          <Text className={classes.subtitle} mb="xs">
-            {entry.sub}
-          </Text>
+          <Text className={classes.subtitle}>{entry.sub}</Text>
         )}
         {entry.info && (
           <Text className={classes.description}>{entry.info}</Text>
