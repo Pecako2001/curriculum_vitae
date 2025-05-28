@@ -6,12 +6,11 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
 import classes from "./projects.module.css";
 
 export interface Project {
-  title: string;
-  description: string;
-  tag: string;
+  key: string;
   year: number;
   video?: string;
   website?: string;
@@ -21,48 +20,33 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    title: "Curriculum Vitae Website",
-    description:
-      "The CV website is an interactive and responsive portfolio built using Next.js and the Mantine UI library, designed to showcase my professional experience, projects, and skills in a modern and user-friendly format. It features dynamic sections for education, work history, technical skills, and personal projects, all presented with smooth animations and clean design. The site includes downloadable documents, live project links, and a contact form, making it both informative and engaging. With a focus on performance and accessibility, this project also serves as a practical demonstration of my frontend development abilities and attention to user experience.",
-    tag: "Web Project",
+    key: "cvsite",
     year: 2025,
     website: "https://koenvanwijlick.com",
     github: "https://github.com/Pecako2001/curriculum_vitae",
     linkedin: "https://www.linkedin.com/in/koen-van-wijlick-00b820204",
   },
   {
-    title: "Run Evolve Application",
-    description:
-      "One of my passions is running. My interest in artificial intelligence inspired me to create a personal running companion—an application that analyzes my performance to provide insights and predict my best times. It also generates personalized training plans tailored to my abilities and progress. I use this project as a testing ground for newly released AI models and neural networks, allowing me to explore the latest advancements in a practical and meaningful way.",
-    tag: "In Progress",
+    key: "runEvolve",
     year: 2025,
     github: "https://github.com/Pecako2001/run-evolve",
   },
   {
-    title: "Growbot",
-    description:
-      "The GrowBot is an autonomous greenhouse robot designed to optimize crop growth through real-time data collection and AI analysis. It navigates independently between plant rows, measuring environmental factors like temperature, humidity, and soil moisture. Using computer vision and machine learning, it assesses plant health, detects issues early, and tracks growth. Based on this data, it suggests or triggers adjustments to improve growing conditions. GrowBot supports sustainable agriculture by enabling precise, data-driven cultivation and reducing manual intervention.",
-    tag: "Graduation Project",
+    key: "growbot",
     year: 2025,
     video: "./Frontpage_1.jpeg",
     linkedin:
       "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_growbot-autonomous-greenhouse-robot",
   },
   {
-    title: "Advancements in Greenhouse Automation",
-    description:
-      "This machine vision system was developed as part of research into automated harvesting of bell peppers. It uses computer vision techniques and deep learning models to detect and localize ripe peppers in real-time from RGB images. The system was trained to identify different ripeness stages. Built using frameworks like YOLO, OpenCV, the project demonstrates practical application of AI in agriculture, contributing to more efficient and selective harvesting processes in controlled environments such as greenhouses.",
-    tag: "Minor A Systems",
+    key: "greenhouseAutomation",
     year: 2024,
     video: "./videos/Minor.mp4",
     linkedin:
       "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_met-trots-kan-ik-melden-dat-ik-mijn-onderzoek-activity-7209212549152567297-4tdb",
   },
   {
-    title: "AI Detection",
-    description:
-      "During my internship at Mechatronic Machinery, I developed an AI-powered platform for object detection and localization, earning a final grade of 9.0. The system enables robots to identify and accurately locate objects for automated picking tasks, opening new possibilities in smart industrial automation. The platform allows users to easily train and deploy AI networks, making advanced machine vision more accessible.",
-    tag: "Traineeship",
+    key: "aiDetection",
     year: 2023,
     video: "./videos/PRJ5_Traineeship.mp4",
     linkedin:
@@ -73,6 +57,7 @@ const projects: Project[] = [
 const sorted = [...projects].sort((a, b) => b.year - a.year);
 
 export default function ProjectsPage() {
+  const { t } = useTranslation();
   return (
     <section id="projects" className={classes.wrapper}>
       <div className={classes.container}>
@@ -84,31 +69,33 @@ export default function ProjectsPage() {
           }}
         >
           <Button component="a" href="/" variant="light" radius="xl">
-            Back to main page
+            {t("projects.back")}
           </Button>
         </div>
 
-        <h1 className={classes.headingPrimary}>My Projects</h1>
+        <h1 className={classes.headingPrimary}>{t("projects.heading")}</h1>
 
         {sorted.map((project, idx) => {
           const side = idx % 2 === 0 ? classes.right : classes.left;
           return (
             <div
-              key={project.title}
+              key={project.key}
               className={`${classes.entry} ${side}`}
               data-year={project.year}
             >
               <Paper withBorder={false} shadow="md" className={classes.card}>
-                <h3 className={classes.cardTitle}>{project.title}</h3>
+                <h3 className={classes.cardTitle}>
+                  {t(`projects.items.${project.key}.title`)}
+                </h3>
                 <Badge className={classes.cardTag} size="md">
-                  {project.tag}
+                  {t(`projects.items.${project.key}.tag`)}
                 </Badge>
 
                 {project.video &&
                   (project.video.match(/\.(jpeg|jpg|png|gif|webp)$/i) ? (
                     <img
                       src={project.video}
-                      alt={project.title}
+                      alt={t(`projects.items.${project.key}.title`)}
                       className={classes.media}
                     />
                   ) : (
@@ -118,7 +105,7 @@ export default function ProjectsPage() {
                     </video>
                   ))}
 
-                <Text>{project.description}</Text>
+                <Text>{t(`projects.items.${project.key}.description`)}</Text>
 
                 {(project.website || project.github || project.linkedin) && (
                   <Group className={classes.actions} gap="xs">

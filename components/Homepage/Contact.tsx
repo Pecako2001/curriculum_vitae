@@ -1,6 +1,7 @@
 // components/Contact/Contact.tsx
 "use client";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Stack,
   Group,
@@ -14,6 +15,7 @@ import { DateInput } from "@mantine/dates";
 import classes from "./Contact.module.css";
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [reason, setReason] = useState("");
@@ -30,17 +32,17 @@ export default function Contact() {
   return (
     <section className={classes.wrapper} id="contact">
       <Paper component="form" onSubmit={handleSubmit} className={classes.form}>
-        <h2 className={classes.heading}>Let’s Talk</h2>
+        <h2 className={classes.heading}>{t("contact.heading")}</h2>
         <Stack gap="sm">
           <TextInput
-            label="Name"
+            label={t("contact.name")}
             value={name}
             onChange={(e) => setName(e.currentTarget.value)}
             required
             classNames={{ root: classes.inputRoot }}
           />
           <TextInput
-            label="Email"
+            label={t("contact.email")}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
@@ -48,7 +50,7 @@ export default function Contact() {
             classNames={{ root: classes.inputRoot }}
           />
           <Textarea
-            label="Reason for contact"
+            label={t("contact.reason")}
             value={reason}
             onChange={(e) => setReason(e.currentTarget.value)}
             autosize
@@ -56,7 +58,7 @@ export default function Contact() {
             classNames={{ root: classes.inputRoot }}
           />
           <DateInput
-            label="Preferred date"
+            label={t("contact.preferredDate")}
             value={date}
             onChange={(v) => setDate(v as Date | null)}
             clearable
@@ -64,14 +66,14 @@ export default function Contact() {
           />
           <Group justify="flex-end">
             <Button type="submit" radius="xl" className={classes.submitBtn}>
-              Submit
+              {t("contact.submit")}
             </Button>
           </Group>
           {submitted && (
             <p
               style={{ textAlign: "center", color: "var(--accent)", margin: 0 }}
             >
-              Thanks! I’ll be in touch soon.
+              {t("contact.thanks")}
             </p>
           )}
         </Stack>
