@@ -25,7 +25,7 @@ const LINKS = [
   { label: "CONTACT", href: "/contact" },
 ];
 
-const SOCIALS = [{ href: "https://www.linkedin.com", Icon: IconBrandLinkedin }];
+const SOCIALS = [{ href: "https://www.linkedin.com/in/koen-van-wijlick-00b820204/", Icon: IconBrandLinkedin }];
 
 const LANGS = [
   { code: "nl", label: "Nederlands", flag: "🇳🇱" },
@@ -115,21 +115,6 @@ export default function Navbar() {
               </Menu.Item>
             </Menu.Dropdown>
           </Menu>
-          <Button
-            component="a"
-            href="/list-your-property"
-            variant="outline"
-            color="gray.0"
-            visibleFrom="sm"
-            style={{
-              fontWeight: 700,
-              textTransform: "uppercase",
-              borderColor: "white",
-              color: "white",
-            }}
-          >
-            ADD A LISTING
-          </Button>
           <Burger
             opened={opened}
             onClick={toggle}
