@@ -20,7 +20,11 @@ export const metadata = {
   description: "Curriculum Vitae Koen van Wijlick",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" {...mantineHtmlProps}>
       <head>
@@ -39,7 +43,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <MantineProvider theme={theme}>
           <AppShell
-            navbar={
+            navbar={{
+              width: 260,
+              breakpoint: "sm",
+              collapsed: { desktop: false, mobile: false },
+            }}
+            header={{ height: 64, collapsed: false, offset: false }}
+            styles={{
+              main: {
+                background: "none",
+                minHeight: "100vh",
+                padding: rem(32),
+                paddingLeft: rem(300),
+                position: "relative",
+              },
+            }}
+          >
+            <AppShell.Navbar>
               <div
                 style={{
                   background: "rgba(255,255,255,0.6)",
@@ -105,8 +125,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </Group>
                 </nav>
               </div>
-            }
-            header={
+            </AppShell.Navbar>
+            <AppShell.Header>
               <header
                 style={{
                   background: "rgba(255,255,255,0.6)",
@@ -121,20 +141,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   letterSpacing: rem(1),
                 }}
               >
-                Curriculum Vitae
+                <a
+                  href="/"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Curriculum Vitae
+                </a>
                 <ColorSchemeToggle />
               </header>
-            }
-            styles={{
-              main: {
-                background: "none",
-                minHeight: "100vh",
-                padding: rem(32),
-                paddingLeft: rem(300),
-                position: "relative",
-              },
-            }}
-          >
+            </AppShell.Header>
             <I18nClientProvider>
               <main>{children}</main>
             </I18nClientProvider>
