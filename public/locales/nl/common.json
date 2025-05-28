@@ -7,6 +7,13 @@
     "takeRoad": "Ontdek het pad dat ik bewandel",
     "viewProjects": "Projecten"
   },
+  "categories": {
+    "education": "Opleiding",
+    "internships": "Stages",
+    "work": "Werkervaring",
+    "volunteer": "Vrijwilligerswerk",
+    "more": "En nog veel meer om te komen"
+  },
   "career": {
     "school1": {
       "label": "Fontys Hogeschool Venlo",

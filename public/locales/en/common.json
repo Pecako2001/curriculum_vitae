@@ -7,6 +7,13 @@
     "takeRoad": "Discover the path I walk",
     "viewProjects": "Projects"
   },
+  "categories": {
+    "education": "Education",
+    "internships": "Internships",
+    "work": "Work Experience",
+    "volunteer": "Volunteer Work",
+    "more": "And many more to come"
+  },
   "career": {
     "school1": {
       "label": "Fontys University of Applied Sciences, Venlo",
