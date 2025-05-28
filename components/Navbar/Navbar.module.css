@@ -9,3 +9,16 @@
 .link:hover {
   color: var(--primary);
 }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brandText {
+  font-weight: 700;
+}
