@@ -18,6 +18,7 @@ import classes from "./Navbar.module.css";
 import { useTheme } from "../../app/providers";
 
 const LINKS = [
+  { label: "HOME", href: "/" },
   { label: "PROJECTS", href: "/projects" },
   { label: "CONTACT", href: "/contact" },
 ];
