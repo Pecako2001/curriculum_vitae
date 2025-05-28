@@ -39,11 +39,11 @@ const LANGS = [
 export default function Navbar() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const { theme, setThemeMode } = useTheme();
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const currentLang = i18n.language || "nl";
   const navLinks = LINKS.map((link) => (
     <a key={link.href} href={link.href} className={classes.link}>
-      {link.label}
+      {t(link.key)}
     </a>
   ));
 
@@ -62,7 +62,8 @@ export default function Navbar() {
     </ActionIcon>
   ));
 
-  const themeLabel = theme === "theme-light" ? "Light" : "Dark";
+  const themeLabel =
+    theme === "theme-light" ? t("navbar.light") : t("navbar.dark");
 
   return (
     <Box component="header" w="100%" className={classes.navbar}>
@@ -71,10 +72,10 @@ export default function Navbar() {
           <a href="/" className={classes.brand}>
             <img src="/Icon.png" alt="Logo" height={32} />
             <Box visibleFrom="sm" className={classes.brandText}>
-              Ciriculum vitea
+              {t("navbar.brandFull")}
             </Box>
             <Box hiddenFrom="sm" className={classes.brandText}>
-              CV
+              {t("navbar.brandShort")}
             </Box>
           </a>
           <Group gap="md" visibleFrom="sm">
@@ -117,10 +118,10 @@ export default function Navbar() {
               </Menu.Target>
               <Menu.Dropdown className={classes.dropdown}>
                 <Menu.Item onClick={() => setThemeMode("theme-light")}>
-                  Light
+                  {t("navbar.light")}
                 </Menu.Item>
                 <Menu.Item onClick={() => setThemeMode("theme-dark")}>
-                  Dark
+                  {t("navbar.dark")}
                 </Menu.Item>
               </Menu.Dropdown>
             </Menu>
@@ -150,7 +151,7 @@ export default function Navbar() {
               onClick={close}
               className={classes.link}
             >
-              {link.label}
+              {t(link.key)}
             </a>
           ))}
           <Group gap="xs" mt="md">
@@ -170,7 +171,7 @@ export default function Navbar() {
                     close();
                   }}
                 >
-                  Light
+                  {t("navbar.light")}
                 </Menu.Item>
                 <Menu.Item
                   onClick={() => {
@@ -178,7 +179,7 @@ export default function Navbar() {
                     close();
                   }}
                 >
-                  Dark
+                  {t("navbar.dark")}
                 </Menu.Item>
               </Menu.Dropdown>
             </Menu>

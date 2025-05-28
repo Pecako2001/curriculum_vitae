@@ -70,5 +70,55 @@
       "sub": "mei 2018 – maart 2019",
       "info": "Stage (MBO niveau 4, jaar 3)\nVerkreeg brede ervaring in mechatronica via meerdere stages. Taken: 2D-elektrische schema’s tekenen, Excel-berekeningen voor mechanische componenten, schakelkasten assembleren en afdelingsoverschrijdende samenwerking voor een sterke basis in industriële automatisering en ontwerp."
     }
+  },
+  "about": {
+    "heading": "Wie ik ben",
+    "paragraph": "Ik ben Koen van Wijlick — een mechatronica‑ingenieur die zich heeft ontwikkeld tot AI‑enthousiasteling met een missie om technologie slimmer en duurzamer te maken. Van jongs af aan was ik gefascineerd door hoe mechanische systemen tot leven komen met slimme software. Die nieuwsgierigheid leidde tot een studie Mechatronica en verdiepingen in robotica, computer vision en autonome besturing. Tegenwoordig bouw ik kasrobots die zelf zien, denken en handelen, zodat telers zich kunnen richten op gezondere gewassen en waardevolle middelen besparen.\n\nIk floreer waar hardware en code samenkomen: precisie­mechanica ontwerpen in SolidWorks, ROS 2‑nodes programmeren in C++ en elk detail uit camerabeelden halen met Python en YOLO. Samenwerking, open communicatie en voortdurend verbeteren kenmerken mijn aanpak; sterke technologie ontstaat wanneer verschillende mensen zich scharen achter een gemeenschappelijk doel. Buiten het lab ren ik graag door het bos, schets ik nieuwe interface‑ideeën of deel ik kennis op lokale makersbijeenkomsten. Ik streef naar oplossingen die niet alleen technisch doordacht zijn maar ook echt iets bijdragen aan mens en milieu. Spreekt dat je aan? Laten we samen iets bijzonders opbouwen."
+  },
+  "navbar": {
+    "home": "Home",
+    "projects": "Projecten",
+    "contact": "Contact",
+    "brandFull": "Curriculum Vitae",
+    "brandShort": "CV",
+    "light": "Licht",
+    "dark": "Donker"
+  },
+  "contact": {
+    "heading": "Laten we praten",
+    "name": "Naam",
+    "email": "E‑mail",
+    "reason": "Reden van contact",
+    "preferredDate": "Voorkeursdatum",
+    "submit": "Versturen",
+    "thanks": "Bedankt! Ik neem snel contact op."
+  },
+  "software": {
+    "heading": "Softwareervaring & certificaten",
+    "certHeading": "Certificaten",
+    "skillsHeading": "Software- en programmeervaardigheden",
+    "cert1": "SolidWorks Mechanical Design Associate – Uitgegeven: mei 2019 – geen vervaldatum. Credential ID: C-5SUCTJW3L4. Bevestigt vaardigheid in 3D CAD-modelleren, assemblages maken en tekeningen opstellen met SolidWorks.",
+    "cert2": "Basisveiligheid VCA – Uitgegeven: maart 2018 – Verloopt: maart 2028. Credential ID: 541448.05174689. Gecertificeerd voor veiligheid en gezondheid in risicovolle omgevingen volgens de Nederlandse/Belgische VCA-norm.",
+    "skill1": "Python, C++ – Robotica, AI, computer vision (YOLO, ROS 2, OpenCV)",
+    "skill2": "React, TypeScript, JavaScript – Moderne frontendontwikkeling",
+    "skill3": "PostgreSQL, SQLite – Databaseontwerp & integratie",
+    "skill4": "FastAPI, MQTT – Backend-API’s & realtime-communicatie",
+    "skill5": "Docker, Git, Linux – Containerisatie, versiebeheer & operations",
+    "skill6": "Siemens PLC (TIA Portal) – Industriële automatisering & besturing",
+    "skill7": "SolidWorks, Inventor, AutoCAD – 3D-modelleren & 2D-schema’s",
+    "skill8": "Redis, WebSockets – In-memory opslag & live datastreaming",
+    "skill9": "Next.js, MUI – Fullstack webapps & componentgedreven UI"
+  },
+  "skills": {
+    "frontend": "Frontend",
+    "backend": "Backend & API’s",
+    "data": "Data & AI",
+    "devops": "DevOps",
+    "databases": "Databases",
+    "cad": "CAD / CAM"
+  },
+  "projects": {
+    "heading": "Mijn projecten",
+    "back": "Terug naar hoofdpagina"
   }
 }
