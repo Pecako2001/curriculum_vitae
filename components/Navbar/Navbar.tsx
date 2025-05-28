@@ -13,10 +13,7 @@ import {
 } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { useDisclosure } from "@mantine/hooks";
-import {
-  IconChevronDown,
-  IconBrandLinkedin,
-} from "@tabler/icons-react";
+import { IconChevronDown, IconBrandLinkedin } from "@tabler/icons-react";
 import classes from "./Navbar.module.css";
 import { useTheme } from "../../app/providers";
 
