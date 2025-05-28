@@ -22,3 +22,15 @@
 .brandText {
   font-weight: 700;
 }
+
+.themeButton {
+  background: var(--navbar-bg);
+  color: var(--navbar-color);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dropdown {
+  background: var(--navbar-bg);
+  color: var(--navbar-color);
+}
