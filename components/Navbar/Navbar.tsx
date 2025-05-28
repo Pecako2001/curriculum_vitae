@@ -63,8 +63,9 @@ export default function Navbar() {
           align="center"
           justify="space-between"
         >
-          <a href="/" style={{ lineHeight: 0 }}>
+          <a href="/" className={classes.brand}>
             <img src="/logo.png" alt="Logo" height={32} />
+            <span className={classes.brandText}>Ciriculum vitea</span>
           </a>
           <Group gap="md" visibleFrom="sm">
             {navLinks}
