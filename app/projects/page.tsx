@@ -2,17 +2,27 @@ import {
   AspectRatio,
   Badge,
   Container,
+  Group,
   Paper,
   SimpleGrid,
   Text,
   Title,
+  ActionIcon,
 } from "@mantine/core";
+import {
+  IconWorld,
+  IconBrandGithub,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
 
 interface Project {
   title: string;
   description: string;
   tag: string;
   video?: string;
+  website?: string;
+  github?: string;
+  linkedin?: string;
 }
 
 const projects: Project[] = [
@@ -22,18 +32,24 @@ const projects: Project[] = [
       "Interactive website built with Next.js and Mantine to present my professional experience.",
     tag: "Web Project",
     video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    website: "https://koenvanwijlick.com",
+    github: "https://github.com/Pecako2001/curriculum_vitae",
+    linkedin: "https://www.linkedin.com/in/koen-van-wijlick-00b820204",
   },
   {
     title: "Run Evolve Application",
     description:
       "A running companion app that tracks progress and offers adaptive training plans.",
     tag: "In Progress",
+    github: "https://github.com/Pecako2001/run-evolve",
   },
   {
     title: "Growbot",
     description:
       "Graduation project focused on an autonomous greenhouse robot that optimizes crop growth.",
     tag: "Graduation Project",
+    linkedin:
+      "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_growbot-autonomous-greenhouse-robot",
   },
   {
     title: "AI Detection",
@@ -74,6 +90,49 @@ export default function ProjectsPage() {
               </AspectRatio>
             )}
             <Text>{project.description}</Text>
+            {(project.website || project.github || project.linkedin) && (
+              <Group mt="sm" gap="xs">
+                {project.website && (
+                  <ActionIcon
+                    component="a"
+                    href={project.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Website"
+                    variant="subtle"
+                    size="lg"
+                  >
+                    <IconWorld size={24} />
+                  </ActionIcon>
+                )}
+                {project.github && (
+                  <ActionIcon
+                    component="a"
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    variant="subtle"
+                    size="lg"
+                  >
+                    <IconBrandGithub size={24} />
+                  </ActionIcon>
+                )}
+                {project.linkedin && (
+                  <ActionIcon
+                    component="a"
+                    href={project.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    variant="subtle"
+                    size="lg"
+                  >
+                    <IconBrandLinkedin size={24} />
+                  </ActionIcon>
+                )}
+              </Group>
+            )}
           </Paper>
         ))}
       </SimpleGrid>
