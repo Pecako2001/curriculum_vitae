@@ -49,6 +49,7 @@ export default function Introduction() {
 
         <Group className={styles.buttons} gap="sm">
           <Button
+            className={styles.journeyBtn}
             variant="light"
             radius="xl"
             size="md"
@@ -70,6 +71,7 @@ export default function Introduction() {
             {t("intro.downloadCV", "Download CV")}
           </Button>
           <Button
+            className={styles.projectsBtn}
             variant="outline"
             radius="xl"
             size="md"
