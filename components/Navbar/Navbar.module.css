@@ -25,6 +25,11 @@
   font-size: 1.5rem;
 }
 
+.navbar {
+  background: var(--navbar-bg);
+  color: var(--navbar-color);
+}
+
 .langSwitcher {
   display: flex;
   gap: 0.5rem;

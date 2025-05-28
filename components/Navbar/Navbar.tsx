@@ -22,7 +22,12 @@ const LINKS = [
   { label: "CONTACT", href: "/contact" },
 ];
 
-const SOCIALS = [{ href: "https://www.linkedin.com/in/koen-van-wijlick-00b820204/", Icon: IconBrandLinkedin }];
+const SOCIALS = [
+  {
+    href: "https://www.linkedin.com/in/koen-van-wijlick-00b820204/",
+    Icon: IconBrandLinkedin,
+  },
+];
 
 const LANGS = [
   { code: "nl", label: "Nederlands", flag: "🇳🇱" },
@@ -59,14 +64,7 @@ export default function Navbar() {
   return (
     <Box component="header" w="100%" className={classes.navbar}>
       <Flex w="100%">
-        <Flex
-          flex={1}
-          bg="gray.0"
-          px="md"
-          py="sm"
-          align="center"
-          justify="space-between"
-        >
+        <Flex flex={1} px="md" py="sm" align="center" justify="space-between">
           <a href="/" className={classes.brand}>
             <img src="/Icon.png" alt="Logo" height={32} />
             <span className={classes.brandText}>Ciriculum vitea</span>
@@ -75,7 +73,7 @@ export default function Navbar() {
             {navLinks}
           </Group>
         </Flex>
-        <Flex bg="dark.7" px="md" py="sm" align="center" gap="xs">
+        <Flex px="md" py="sm" align="center" gap="xs">
           <Group gap="xs" visibleFrom="sm" c="gray.0">
             {icons}
           </Group>
