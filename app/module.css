@@ -1,0 +1,18 @@
+:root {
+  --accent: #e06c34; /* burnt‑orange accent pulled from screenshots */
+  --bg-dark: #0d0d0d;
+  --card-bg: #181818f2;
+  --card-radius: 18px;
+  --navbar-bg: #ffffff;
+  --navbar-color: #000000;
+}
+
+.theme-dark {
+  --navbar-bg: #333333;
+  --navbar-color: #ffffff;
+}
+
+.theme-light {
+  --navbar-bg: #ffffff;
+  --navbar-color: #000000;
+}

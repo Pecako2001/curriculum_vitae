@@ -1,0 +1,57 @@
+.link {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+.brand {
+  color:black;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brandText {
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.langSwitcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  filter: grayscale(0.6);
+  transition: filter 0.2s ease;
+}
+
+.langActive {
+  filter: none;
+}
+
+.themeButton {
+  background: var(--navbar-bg);
+  color: var(--navbar-color);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.dropdown {
+  background: var(--navbar-bg);
+  color: var(--navbar-color);
+}

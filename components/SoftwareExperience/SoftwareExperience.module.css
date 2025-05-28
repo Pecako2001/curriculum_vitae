@@ -1,14 +1,89 @@
+/* Section wrapper */
 .wrapper {
-  padding: 4rem 1rem;
+  position: relative;
+  padding: clamp(4rem, 7vw, 6rem) 1rem;
+  background: var(--bg-dark);
   display: flex;
   justify-content: center;
+  color: #f5f5f5;
 }
 
+/* Blurred decorative background (optional) */
+.wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(at top left, rgba(224, 108, 52, 0.2), transparent 60%),
+    radial-gradient(at bottom right, rgba(224, 108, 52, 0.15), transparent 60%);
+  filter: blur(120px);
+  z-index: 0;
+}
+
+/* Glassy card */
 .inner {
-  max-width: 680px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(6px);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+  max-width: 740px;
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  backdrop-filter: blur(8px);
+  padding: clamp(2rem, 5vw, 3rem);
+  box-shadow: 0 12px 42px rgb(0 0 0 / 0.4);
+}
+
+/* Headings */
+.headingPrimary {
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.headingSecondary {
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* List styling */
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.listItem {
+  position: relative;
+  margin-bottom: 0.85rem;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+.listItem strong {
+  color: #fff;
+}
+
+.listItem::before {
+  content: "";
+  position: absolute;
+  left: -1.2rem;
+  top: 0.55rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .wrapper {
+    padding: 3rem 1rem;
+  }
+  .listItem {
+    font-size: 0.95rem;
+  }
 }
