@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import {
   ActionIcon,
   Burger,
@@ -51,17 +52,17 @@ export default function Navbar() {
     <header className={classes.navbar}>
       <div className={classes.inner}>
         {/* Brand */}
-        <a href="/" className={classes.brand}>
+        <Link href="/" className={classes.brand}>
           <img src="/Icon.png" alt="Logo" className={classes.brandLogo} />
           <span className={classes.brandText}>Personal&nbsp;Profile&nbsp;</span>
-        </a>
+        </Link>
 
         {/* Links */}
         <nav className={classes.links} aria-label="Primary">
           {LINKS.map((link) => (
-            <a key={link.href} href={link.href} className={classes.link}>
+            <Link key={link.href} href={link.href} className={classes.link}>
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -132,14 +133,14 @@ export default function Navbar() {
       <Drawer opened={opened} onClose={close} size="100%" padding="md">
         <Stack gap="lg">
           {LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={close}
               className={classes.drawerLink}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <Group gap="sm">
             {LANGS.map((lang) => (

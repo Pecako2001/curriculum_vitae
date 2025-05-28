@@ -1,6 +1,6 @@
 // components/ProjectsTimeline/ProjectsTimeline.tsx
 "use client";
-import { Badge, Button, Group, Paper, Text, ActionIcon } from "@mantine/core";
+import { Badge, Group, Paper, Text, ActionIcon } from "@mantine/core";
 import {
   IconWorld,
   IconBrandGithub,
@@ -20,6 +20,13 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    key: "growbot",
+    year: 2025,
+    video: "./Frontpage_1.jpeg",
+    linkedin:
+      "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_growbot-autonomous-greenhouse-robot",
+  },
+  {
     key: "cvsite",
     year: 2025,
     website: "https://koenvanwijlick.com",
@@ -30,13 +37,6 @@ const projects: Project[] = [
     key: "runEvolve",
     year: 2025,
     github: "https://github.com/Pecako2001/run-evolve",
-  },
-  {
-    key: "growbot",
-    year: 2025,
-    video: "./Frontpage_1.jpeg",
-    linkedin:
-      "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_growbot-autonomous-greenhouse-robot",
   },
   {
     key: "greenhouseAutomation",

@@ -168,9 +168,15 @@ function TimelineEntry({ entry, index }: { entry: Entry; index: number }) {
           {entry.label}
         </Title>
         {entry.sub && <Text className={classes.subtitle}>{entry.sub}</Text>}
-        {entry.info && (
-          <Text className={classes.description}>{entry.info}</Text>
-        )}
+        {entry.info &&
+          entry.info.split("\n").map((line, i) => (
+            <Text
+              key={i}
+              className={i === 0 ? classes.role : classes.description}
+            >
+              {line}
+            </Text>
+          ))}
       </Paper>
     </motion.div>
   );
