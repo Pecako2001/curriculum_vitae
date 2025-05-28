@@ -1,13 +1,6 @@
 // components/ProjectsTimeline/ProjectsTimeline.tsx
 "use client";
-import {
-  Badge,
-  Button,
-  Group,
-  Paper,
-  Text,
-  ActionIcon,
-} from "@mantine/core";
+import { Badge, Button, Group, Paper, Text, ActionIcon } from "@mantine/core";
 import {
   IconWorld,
   IconBrandGithub,

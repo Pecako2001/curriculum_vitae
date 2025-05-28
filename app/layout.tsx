@@ -1,46 +1,18 @@
 "use client";
 
 import "@mantine/core/styles.css";
-import "./module.css"
-import {
-  MantineProvider,
-  createTheme,
-  ActionIcon,
-  Loader,
-  AppShell,
-} from "@mantine/core";
+import "./module.css";
+import { AppShell } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
-import { useDisclosure } from "@mantine/hooks";
-import { usePathname } from "next/navigation";
-import Providers, { useTheme } from "./providers";
+import Providers from "./providers";
 import Navbar from "../components/Navbar/Navbar"; // Your custom Navbar component
 import I18nClientProvider from "../components/I18nClientProvider";
-// Mantine theme configuration
-export const mantineThemeConfig = createTheme({
-  primaryColor: "indigo",
-  defaultRadius: "md",
-  focusRing: "auto",
-  fontFamily: "Open Sans, sans-serif",
-  headings: { fontFamily: "Open Sans, sans-serif" },
-  components: {
-    ActionIcon: ActionIcon.extend({
-      defaultProps: {
-        variant: "subtle",
-      },
-    }),
-    Loader: Loader.extend({
-      defaultProps: {
-        type: "bars",
-      },
-    }),
-  },
-});
 
 function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <AppShell>
       <AppShell.Header>
-        <Navbar/>
+        <Navbar />
       </AppShell.Header>
 
       <AppShell.Main style={{ paddingTop: 60 }}>{children}</AppShell.Main>
@@ -48,7 +20,11 @@ function AppLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
@@ -56,13 +32,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/avatar.png" />
       </head>
       <body>
-      <I18nClientProvider>
-        <MantineProvider theme={mantineThemeConfig}>
+        <I18nClientProvider>
           <Providers>
             <Notifications />
             <AppLayout>{children}</AppLayout>
           </Providers>
-        </MantineProvider>
         </I18nClientProvider>
       </body>
     </html>

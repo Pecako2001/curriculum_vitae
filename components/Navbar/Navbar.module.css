@@ -2,16 +2,15 @@
   text-transform: uppercase;
   font-weight: 700;
   text-decoration: none;
-  color: inherit;
+  color: var(--text-color);
   transition: color 0.15s ease;
 }
 
 .link:hover {
-  color: var(--primary);
+  color: var(--accent-hover);
 }
 
 .brand {
-  color: var(--text-color);
   display: flex;
   align-items: center;
   gap: 0.5rem;

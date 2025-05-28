@@ -22,7 +22,7 @@ export default function Contact() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log({ name, email, reason, date });
+    // TODO: handle form submission
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
   }
@@ -58,7 +58,7 @@ export default function Contact() {
           <DateInput
             label="Preferred date"
             value={date}
-            onChange={setDate}
+            onChange={(v) => setDate(v as Date | null)}
             clearable
             classNames={{ root: classes.inputRoot }}
           />
@@ -68,7 +68,9 @@ export default function Contact() {
             </Button>
           </Group>
           {submitted && (
-            <p style={{ textAlign: "center", color: "var(--accent)", margin: 0 }}>
+            <p
+              style={{ textAlign: "center", color: "var(--accent)", margin: 0 }}
+            >
               Thanks! I’ll be in touch soon.
             </p>
           )}

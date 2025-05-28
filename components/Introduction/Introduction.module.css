@@ -37,7 +37,7 @@
   flex-direction: column;
   justify-content: center;
   padding: clamp(3rem, 6vw, 6rem) var(--gap-inline);
-  background: var(--dark-bg);
+  background: var(--bg-color);
   color: var(--light-text);
   gap: 1.75rem;
 }
@@ -189,7 +189,6 @@
   left: 0;
   width: 100%;
   height: clamp(4rem, 8vw, 6rem);
-  background: linear-gradient(transparent, var(--dark-bg));
   pointer-events: none;
 }
 

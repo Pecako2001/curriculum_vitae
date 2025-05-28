@@ -13,10 +13,7 @@ import {
 } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { useDisclosure } from "@mantine/hooks";
-import {
-  IconChevronDown,
-  IconBrandLinkedin,
-} from "@tabler/icons-react";
+import { IconChevronDown, IconBrandLinkedin } from "@tabler/icons-react";
 import classes from "./Navbar.module.css";
 import { useTheme } from "../../app/providers";
 
@@ -60,7 +57,7 @@ export default function Navbar() {
   const themeLabel = theme === "theme-light" ? "Light" : "Dark";
 
   return (
-    <Box component="header" w="100%">
+    <Box component="header" w="100%" className={classes.navbar}>
       <Flex w="100%">
         <Flex
           flex={1}

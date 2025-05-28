@@ -2,7 +2,7 @@
 .wrapper {
   position: relative;
   padding: clamp(4rem, 7vw, 6rem) 1rem;
-  background: var(--bg-dark);
+  background: var(--bg-color);
   display: flex;
   justify-content: center;
   color: var(--light-text);
@@ -64,7 +64,7 @@
 }
 
 .listItem strong {
-  color: var(--white);
+  color: var(--text-color);
 }
 
 .listItem::before {
