@@ -25,23 +25,6 @@ export default function Introduction() {
 
   return (
     <section id="intro" className={styles.wrapper}>
-      {/* Language switcher */}
-      <nav className={styles.langSwitcher} aria-label="Language switcher">
-        {LANGS.map((lang) => (
-          <button
-            key={lang.code}
-            onClick={() => i18n.changeLanguage(lang.code)}
-            className={`${styles.langBtn} ${
-              currentLang === lang.code ? styles.langActive : ""
-            }`}
-            aria-label={lang.label}
-            type="button"
-          >
-            <span>{lang.flag}</span>
-          </button>
-        ))}
-      </nav>
-
       {/* Left – full‑bleed photo (swap src for your own) */}
       <div className={styles.image} aria-hidden="true">
         <img
