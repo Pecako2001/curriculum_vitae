@@ -1,6 +1,6 @@
 /* SECTION WRAPPER */
 .wrapper {
-  background: var(--bg-dark);
+  background: var(--bg-color);
   padding: clamp(4rem, 7vw, 6rem) 1rem;
   display: flex;
   justify-content: center;
@@ -36,7 +36,7 @@
 .inputRoot .mantine-Input-input {
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.25);
-  color: var(--white);
+  color: var(--text-color);
 }
 
 .inputRoot .mantine-Input-input:focus-within {
@@ -46,7 +46,7 @@
 /* Submit button accent */
 .submitBtn {
   background: var(--accent);
-  color: var(--white);
+  color: var(--text-color);
   transition: background 0.25s ease;
 }
 .submitBtn:hover {

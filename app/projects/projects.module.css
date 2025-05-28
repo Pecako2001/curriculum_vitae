@@ -1,6 +1,6 @@
 /* SECTION */
 .wrapper {
-    background: var(--bg-dark);
+    background: var(--bg-color);
     padding: clamp(4rem, 7vw, 6rem) 1rem;
     color: var(--light-text);
     overflow: hidden;
@@ -86,7 +86,7 @@
     margin: 0 0 0.35rem;
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--white);
+    color: var(--text-color);
   }
   
   .cardTag {

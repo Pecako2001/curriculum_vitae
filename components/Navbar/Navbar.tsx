@@ -57,7 +57,7 @@ export default function Navbar() {
   const themeLabel = theme === "theme-light" ? "Light" : "Dark";
 
   return (
-    <Box component="header" w="100%">
+    <Box component="header" w="100%" className={classes.navbar}>
       <Flex w="100%">
         <Flex
           flex={1}

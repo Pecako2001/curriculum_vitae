@@ -1,8 +1,8 @@
 .wrapper {
   position: relative;
   padding: clamp(4rem, 8vw, 6rem) 1rem;
-  background: var(--bg-dark);
-  color: var(--light-text);
+  background: var(--bg-color);
+  color: var(--text-color);
   overflow: hidden;
 }
 
@@ -83,7 +83,7 @@
   font-size: clamp(1.6rem, 3.2vw, 2.2rem);
   margin: 0 0 0.25rem;
   letter-spacing: 0.02em;
-  color: var(--white);
+  color: var(--text-color);
 }
 
 .subtitle {
