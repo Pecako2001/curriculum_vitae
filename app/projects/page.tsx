@@ -61,18 +61,6 @@ export default function ProjectsPage() {
   return (
     <section id="projects" className={classes.wrapper}>
       <div className={classes.container}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "2rem",
-          }}
-        >
-          <Button component="a" href="/" variant="light" radius="xl">
-            {t("projects.back")}
-          </Button>
-        </div>
-
         <h1 className={classes.headingPrimary}>{t("projects.heading")}</h1>
 
         {sorted.map((project, idx) => {
