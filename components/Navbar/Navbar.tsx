@@ -64,7 +64,7 @@ export default function Navbar() {
           justify="space-between"
         >
           <a href="/" className={classes.brand}>
-            <img src="/logo.png" alt="Logo" height={32} />
+            <img src="/Icon.png" alt="Logo" height={32} />
             <span className={classes.brandText}>Ciriculum vitea</span>
           </a>
           <Group gap="md" visibleFrom="sm">

@@ -9,6 +9,7 @@ export default function HomePage() {
   return (
     <>
       <Introduction />
+      <About />
       <ModernTimeline />
       <SoftwareExperience />
       <Skills />
