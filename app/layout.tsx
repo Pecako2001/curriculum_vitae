@@ -20,7 +20,11 @@ export const metadata = {
   description: "Curriculum Vitae Koen van Wijlick",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" {...mantineHtmlProps}>
       <head>
@@ -34,15 +38,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         style={{
           minHeight: "100vh",
-          background: "linear-gradient(135deg, #e3f2fd 0%, #fffde7 100%)",
+          background: "var(--bg-gradient)",
         }}
       >
-        <MantineProvider theme={theme}>
+        <MantineProvider theme={theme} defaultColorScheme="auto">
           <AppShell
-            navbar={
+            navbar={{ width: 300, breakpoint: "sm" }}
+            header={{ height: 60 }}
+            styles={{
+              main: {
+                background: "none",
+                minHeight: "100vh",
+                padding: rem(32),
+                paddingLeft: rem(300),
+                position: "relative",
+              },
+            }}
+          >
+            <AppShell.Navbar>
               <div
                 style={{
-                  background: "rgba(255,255,255,0.6)",
+                  background: "var(--surface-bg)",
                   backdropFilter: "blur(8px)",
                   borderRight: "1px solid rgba(0,0,0,0.1)",
                   boxShadow: "2px 0 16px #0001",
@@ -105,11 +121,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </Group>
                 </nav>
               </div>
-            }
-            header={
+            </AppShell.Navbar>
+            <AppShell.Header>
               <header
                 style={{
-                  background: "rgba(255,255,255,0.6)",
+                  background: "var(--surface-bg)",
                   backdropFilter: "blur(8px)",
                   boxShadow: "0 2px 8px #0001",
                   padding: rem(16),
@@ -124,20 +140,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 Curriculum Vitae
                 <ColorSchemeToggle />
               </header>
-            }
-            styles={{
-              main: {
-                background: "none",
-                minHeight: "100vh",
-                padding: rem(32),
-                paddingLeft: rem(300),
-                position: "relative",
-              },
-            }}
-          >
-            <I18nClientProvider>
-              <main>{children}</main>
-            </I18nClientProvider>
+            </AppShell.Header>
+            <AppShell.Main>
+              <I18nClientProvider>
+                <main>{children}</main>
+              </I18nClientProvider>
+            </AppShell.Main>
           </AppShell>
         </MantineProvider>
       </body>
