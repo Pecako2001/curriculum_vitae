@@ -3,8 +3,8 @@
   flex-wrap: wrap;
   min-height: 100vh;
   width: 100%;
-  isolation: isolate; /* creates new stacking context for pseudo-elements */
-  position: relative; /* ensure arrow stays within component */
+  isolation: isolate; 
+  position: relative;
 }
 
 /* ──────── LEFT : COVER IMAGE ────────*/
@@ -77,7 +77,6 @@
 .buttons {
   padding-left: 2rem;
   display: flex;
-  color: var(--accent);
   flex-wrap: wrap;
   gap: 0.75rem;
 }
@@ -149,29 +148,6 @@
   .arrowWrap {
     display: none; /* hides arrow on small screens */
   }
-}
-
-/* ──────── Language switcher ────────*/
-.langSwitcher {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.5rem;
-  display: flex;
-  gap: 0.5rem;
-  z-index: 10;
-}
-
-.langBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.7rem;
-  filter: grayscale(0.6);
-  transition: filter 0.2s ease;
-}
-
-.langActive {
-  filter: none;
 }
 
 /* Animate gradient inside highlight on hover */

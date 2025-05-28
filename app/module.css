@@ -26,7 +26,7 @@
   --gradient-end:    #34a853;  
 
   /* Social & hulpmiddelen */
-  --social-bg:       #e8eaed;  
+  --social-bg:       #c4c4c4;  
 }
 
 .dark {
@@ -43,6 +43,7 @@
   --gradient-start: #ff512f;
   --accent-hover: #f07d46;
   --gradient-end: #dd2476;
+  --social-bg:       #3b3b3b;  
 }
 
 body {

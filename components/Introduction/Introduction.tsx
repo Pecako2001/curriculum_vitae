@@ -66,7 +66,6 @@ export default function Introduction() {
             component="a"
             href={cvPdf}
             download
-            style={{ textTransform: "none" }}
           >
             {t("intro.downloadCV", "Download CV")}
           </Button>
@@ -77,7 +76,6 @@ export default function Introduction() {
             component="a"
             href="/projects"
             leftSection={<IconRocket size={18} />}
-            style={{ textTransform: "none" }}
           >
             {t("intro.viewProjects", "Projects")}
           </Button>

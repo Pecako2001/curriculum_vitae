@@ -1,4 +1,3 @@
-// components/Navbar/Navbar.tsx (refactor)
 "use client";
 import React from "react";
 import {
@@ -8,6 +7,7 @@ import {
   Group,
   Stack,
   Button,
+  useMantineTheme,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconChevronDown, IconBrandLinkedin } from "@tabler/icons-react";
@@ -37,8 +37,15 @@ const LANGS = [
 export default function Navbar() {
   const [opened, { open, close }] = useDisclosure(false);
   const { theme, setThemeMode } = useTheme();
+  const mantineTheme = useMantineTheme();
   const { i18n } = useTranslation();
   const currentLang = i18n.language || "nl";
+
+  // Set burger color based on theme
+  const burgerColor =
+    theme === "theme-dark"
+      ? mantineTheme.white
+      : mantineTheme.colors.dark[7] || "#222";
 
   return (
     <header className={classes.navbar}>
@@ -71,7 +78,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 variant="subtle"
                 aria-label={label}
-                style={{ color: "#fff" }}
+                style={{ color: burgerColor }}
               >
                 <Icon size={20} />
               </ActionIcon>
@@ -116,7 +123,7 @@ export default function Navbar() {
             onClick={open}
             className={classes.burger}
             aria-label="Open navigation drawer"
-            color="#fff"
+            color={burgerColor}
           />
         </div>
       </div>
@@ -162,7 +169,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 variant="subtle"
                 aria-label={label}
-                style={{ color: "#fff" }}
+                style={{ color: burgerColor }}
               >
                 <Icon size={22} />
               </ActionIcon>
