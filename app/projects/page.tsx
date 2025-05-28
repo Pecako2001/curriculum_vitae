@@ -1,25 +1,17 @@
-import {
-  AspectRatio,
-  Badge,
-  Container,
-  Button,
-  Group,
-  Paper,
-  SimpleGrid,
-  Text,
-  Title,
-  ActionIcon,
-} from "@mantine/core";
+// components/ProjectsTimeline/ProjectsTimeline.tsx
+"use client";
+import { Badge, Group, Paper, Text, ActionIcon } from "@mantine/core";
 import {
   IconWorld,
   IconBrandGithub,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
+import classes from "./projects.module.css";
 
-interface Project {
-  title: string;
-  description: string;
-  tag: string;
+export interface Project {
+  key: string;
+  year: number;
   video?: string;
   website?: string;
   github?: string;
@@ -28,144 +20,132 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Curriculum Vitae Website",
-    description:
-      "Interactive website built with Next.js and Mantine to present my professional experience.",
-    tag: "Web Project",
+    key: "cvsite",
+    year: 2025,
     website: "https://koenvanwijlick.com",
     github: "https://github.com/Pecako2001/curriculum_vitae",
     linkedin: "https://www.linkedin.com/in/koen-van-wijlick-00b820204",
   },
   {
-    title: "Run Evolve Application",
-    description:
-      "A running companion app that tracks progress and offers adaptive training plans.",
-    tag: "In Progress",
+    key: "runEvolve",
+    year: 2025,
     github: "https://github.com/Pecako2001/run-evolve",
   },
   {
-    title: "Growbot",
-    description:
-      "Graduation project focused on an autonomous greenhouse robot that optimizes crop growth.",
-    tag: "Graduation Project",
+    key: "growbot",
+    year: 2025,
     video: "./Frontpage_1.jpeg",
     linkedin:
       "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_growbot-autonomous-greenhouse-robot",
   },
   {
-    title: "Advancements in Greenhouse Automation",
-    description:
-      "Minor project using machine vision to detect bell peppers, further more researching the capabilities within the greenhoues automation.",
-    tag: "Minor A systems",
+    key: "greenhouseAutomation",
+    year: 2024,
     video: "./videos/Minor.mp4",
     linkedin:
-      "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_met-trots-kan-ik-melden-dat-ik-mijn-onderzoek-activity-7209212549152567297-4tdb?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQXQgsBiuWXsp4QkyzdZNYd_BqJiNwB3f4",
+      "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_met-trots-kan-ik-melden-dat-ik-mijn-onderzoek-activity-7209212549152567297-4tdb",
   },
   {
-    title: "AI Detection",
-    description:
-      "Traineeship project exploring machine vision techniques for precise product detection.",
-    tag: "Traineeship Project",
+    key: "aiDetection",
+    year: 2023,
     video: "./videos/PRJ5_Traineeship.mp4",
     linkedin:
-      "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_%F0%9D%91%BB%F0%9D%92%8A%F0%9D%92%86%F0%9D%92%8F-%F0%9D%92%8E%F0%9D%92%86%F0%9D%92%95-%F0%9D%92%86%F0%9D%92%86%F0%9D%92%8F-%F0%9D%92%88%F0%9D%92%93%F0%9D%92%8A%F0%9D%92%87%F0%9D%92%87%F0%9D%92%86%F0%9D%92%8D-inmiddels-activity-7160176481279557635-0XJ5?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQXQgsBiuWXsp4QkyzdZNYd_BqJiNwB3f4",
+      "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_%F0%9D%91%BB%F0%9D%92%8A%F0%9D%92%86%F0%9D%92%8F-%F0%9D%92%8E%F0%9D%92%86%F0%9D%92%95-%F0%9D%92%86%F0%9D%92%86%F0%9D%92%8F-%F0%9D%92%88%F0%9D%92%93%F0%9D%92%8A%F0%9D%92%87%F0%9D%92%87%F0%9D%92%86%F0%9D%92%8D-inmiddels-activity-7160176481279557635-0XJ5",
   },
 ];
 
+const sorted = [...projects].sort((a, b) => b.year - a.year);
+
 export default function ProjectsPage() {
+  const { t } = useTranslation();
   return (
-    <Container size="lg" py="xl">
-      <Group justify="center" mb="md">
-        <Button component="a" href="/" variant="light" radius="xl">
-          Back to main page
-        </Button>
-      </Group>
-      <Title order={1} ta="center" mb="xl">
-        My Projects
-      </Title>
-      <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="xl">
-        {projects.map((project) => (
-          <Paper key={project.title} shadow="md" radius="md" p="md" withBorder>
-            <Title order={3}>{project.title}</Title>
-            <Badge variant="light" mt="xs" mb="sm">
-              {project.tag}
-            </Badge>
-            {project.video && (
-              project.video.match(/\.(jpeg|jpg|png|gif|webp)$/i) ? (
-                <img
-                  src={project.video}
-                  alt={project.title}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: 8,
-                    display: "block",
-                    marginBottom: "1rem",
-                  }}
-                />
-              ) : (
-                <video
-                  controls
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: 8,
-                    display: "block",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  <source src={project.video} type="video/mp4" />
-                  <track kind="captions" />
-                </video>
-              )
-            )}
-            <Text>{project.description}</Text>
-            {(project.website || project.github || project.linkedin) && (
-              <Group mt="sm" gap="xs">
-                {project.website && (
-                  <ActionIcon
-                    component="a"
-                    href={project.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Website"
-                    variant="subtle"
-                    size="lg"
-                  >
-                    <IconWorld size={24} />
-                  </ActionIcon>
+    <section id="projects" className={classes.wrapper}>
+      <div className={classes.container}>
+        <h1 className={classes.headingPrimary}>{t("projects.heading")}</h1>
+
+        {sorted.map((project, idx) => {
+          const side = idx % 2 === 0 ? classes.right : classes.left;
+          return (
+            <div
+              key={project.key}
+              className={`${classes.entry} ${side}`}
+              data-year={project.year}
+            >
+              <Paper withBorder={false} shadow="md" className={classes.card}>
+                <h3 className={classes.cardTitle}>
+                  {t(`projects.items.${project.key}.title`)}
+                </h3>
+                <Badge className={classes.cardTag} size="md">
+                  {t(`projects.items.${project.key}.tag`)}
+                </Badge>
+
+                {project.video &&
+                  (project.video.match(/\.(jpeg|jpg|png|gif|webp)$/i) ? (
+                    <img
+                      src={project.video}
+                      alt={t(`projects.items.${project.key}.title`)}
+                      className={classes.media}
+                    />
+                  ) : (
+                    <video controls className={classes.media}>
+                      <source src={project.video} type="video/mp4" />
+                      <track kind="captions" />
+                    </video>
+                  ))}
+
+                <Text>{t(`projects.items.${project.key}.description`)}</Text>
+
+                {(project.website || project.github || project.linkedin) && (
+                  <Group className={classes.actions} gap="xs">
+                    {project.website && (
+                      <ActionIcon
+                        className={classes.iconBtn}
+                        component="a"
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Website"
+                        size="lg"
+                        variant="subtle"
+                      >
+                        <IconWorld size={24} />
+                      </ActionIcon>
+                    )}
+                    {project.github && (
+                      <ActionIcon
+                        className={classes.iconBtn}
+                        component="a"
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        size="lg"
+                        variant="subtle"
+                      >
+                        <IconBrandGithub size={24} />
+                      </ActionIcon>
+                    )}
+                    {project.linkedin && (
+                      <ActionIcon
+                        className={classes.iconBtn}
+                        component="a"
+                        href={project.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        size="lg"
+                        variant="subtle"
+                      >
+                        <IconBrandLinkedin size={24} />
+                      </ActionIcon>
+                    )}
+                  </Group>
                 )}
-                {project.github && (
-                  <ActionIcon
-                    component="a"
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    variant="subtle"
-                    size="lg"
-                  >
-                    <IconBrandGithub size={24} />
-                  </ActionIcon>
-                )}
-                {project.linkedin && (
-                  <ActionIcon
-                    component="a"
-                    href={project.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    variant="subtle"
-                    size="lg"
-                  >
-                    <IconBrandLinkedin size={24} />
-                  </ActionIcon>
-                )}
-              </Group>
-            )}
-          </Paper>
-        ))}
-      </SimpleGrid>
-    </Container>
+              </Paper>
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }

@@ -7,6 +7,13 @@
     "takeRoad": "Discover the path I walk",
     "viewProjects": "Projects"
   },
+  "categories": {
+    "education": "Education",
+    "internships": "Internships",
+    "work": "Work Experience",
+    "volunteer": "Volunteer Work",
+    "more": "And many more to come"
+  },
   "career": {
     "school1": {
       "label": "Fontys University of Applied Sciences, Venlo",
@@ -62,7 +69,84 @@
     "internship3": {
       "label": "Various Companies (Christiaens Group BV, WP Haton, Aliaxis)",
       "sub": "May 2018 to March 2019",
-      "info": "Internship (MBO level 4, year 3)\nGained broad experience in mechatronics through multiple internships. Tasks: drawing 2D electrical schematics, Excel calculations for mechanical components, assembling control cabinets, and cross-department collaboration for a solid foundation in industrial automation and design."
+      "info": "Internship (MBO level 4, year 3,2,1)\nGained broad experience in mechatronics through multiple internships. Tasks: drawing 2D electrical schematics, Excel calculations for mechanical components, assembling control cabinets, and cross-department collaboration for a solid foundation in industrial automation and design."
+    }
+  },
+  "about": {
+    "heading": "Who I Am",
+    "paragraph": "I’m Koen van Wijlick — a mechatronics engineer who has delved into artificial intelligence, driven to make technology smarter, more sustainable, and more human-centered. From an early age, I was fascinated by how mechatronic systems come to life when guided by intelligent software. That curiosity led me to pursue a degree in Mechatronics, where I specialized in robotics, computer vision, and autonomous systems. I thrive at the intersection of hardware and software — integrating smart electrical components, building intelligent control systems, and extracting valuable insights from camera feeds using machine learning. My approach is grounded in clear communication, collaboration, and fast, thoughtful iteration. Whether I’m optimizing embedded systems or sketching new interface ideas, I strive to develop solutions that are not only technically robust but also contribute to both people and the planet. Do you share the same passion for technology that truly makes a difference?"
+  },
+  "navbar": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "brandFull": "Curriculum Vitae",
+    "brandShort": "CV",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "contact": {
+    "heading": "Let’s Talk",
+    "name": "Name",
+    "email": "Email",
+    "reason": "Reason for contact",
+    "preferredDate": "Preferred date",
+    "submit": "Submit",
+    "thanks": "Thanks! I’ll be in touch soon."
+  },
+  "software": {
+    "heading": "Software Experience & Certifications",
+    "certHeading": "Certifications",
+    "skillsHeading": "Software & Programming Skills",
+    "cert1": "SolidWorks Mechanical Design Associate – Issued: May 2019 – No expiration. Credential ID: C-5SUCTJW3L4. Validated proficiency in 3D CAD modeling, assembly creation and drawings using SolidWorks.",
+    "cert2": "Basisveiligheid VCA – Issued: March 2018 – Expires: March 2028. Credential ID: 541448.05174689. Certified in occupational health & safety for high‑risk environments (Dutch/Belgian VCA standards).",
+    "skill1": "Python, C++ – Robotics, AI, computer vision (YOLO, ROS 2, OpenCV)",
+    "skill2": "React, TypeScript, JavaScript – Modern frontend development",
+    "skill3": "PostgreSQL, SQLite – Database design & integration",
+    "skill4": "FastAPI, MQTT – Backend APIs & real‑time comms",
+    "skill5": "Docker, Git, Linux – Containerisation, version control & ops",
+    "skill6": "Siemens PLC (TIA Portal) – Industrial automation & control",
+    "skill7": "SolidWorks, Inventor, AutoCAD – 3D modelling & 2D schematics",
+    "skill8": "Redis, WebSockets – In‑memory data storage & live streaming",
+    "skill9": "Next.js, MUI – Full‑stack web apps & component‑driven UI"
+  },
+  "skills": {
+    "frontend": "Frontend",
+    "backend": "Backend & APIs",
+    "data": "Data & AI",
+    "devops": "DevOps",
+    "databases": "Databases",
+    "cad": "CAD / CAM"
+  },
+  "projects": {
+    "heading": "My Projects",
+    "back": "Back to main page",
+    "items": {
+      "cvsite": {
+        "title": "Curriculum Vitae Website",
+        "description": "The CV website is an interactive and responsive portfolio built using Next.js and the Mantine UI library, designed to showcase my professional experience, projects, and skills in a modern and user-friendly format. It features dynamic sections for education, work history, technical skills, and personal projects, all presented with smooth animations and clean design. The site includes downloadable documents, live project links, and a contact form, making it both informative and engaging. With a focus on performance and accessibility, this project also serves as a practical demonstration of my frontend development abilities and attention to user experience.",
+        "tag": "Web Project"
+      },
+      "runEvolve": {
+        "title": "Run Evolve Application",
+        "description": "One of my passions is running. My interest in artificial intelligence inspired me to create a personal running companion—an application that analyzes my performance to provide insights and predict my best times. It also generates personalized training plans tailored to my abilities and progress. I use this project as a testing ground for newly released AI models and neural networks, allowing me to explore the latest advancements in a practical and meaningful way.",
+        "tag": "In Progress"
+      },
+      "growbot": {
+        "title": "Growbot",
+        "description": "The GrowBot is an autonomous greenhouse robot designed to optimize crop growth through real-time data collection and AI analysis. It navigates independently between plant rows, measuring environmental factors like temperature, humidity, and soil moisture. Using computer vision and machine learning, it assesses plant health, detects issues early, and tracks growth. Based on this data, it suggests or triggers adjustments to improve growing conditions. GrowBot supports sustainable agriculture by enabling precise, data-driven cultivation and reducing manual intervention.",
+        "tag": "Graduation Project"
+      },
+      "greenhouseAutomation": {
+        "title": "Advancements in Greenhouse Automation",
+        "description": "This machine vision system was developed as part of research into automated harvesting of bell peppers. It uses computer vision techniques and deep learning models to detect and localize ripe peppers in real-time from RGB images. The system was trained to identify different ripeness stages. Built using frameworks like YOLO, OpenCV, the project demonstrates practical application of AI in agriculture, contributing to more efficient and selective harvesting processes in controlled environments such as greenhouses.",
+        "tag": "Minor A Systems"
+      },
+      "aiDetection": {
+        "title": "AI Detection",
+        "description": "During my internship at Mechatronic Machinery, I developed an AI-powered platform for object detection and localization, earning a final grade of 9.0. The system enables robots to identify and accurately locate objects for automated picking tasks, opening new possibilities in smart industrial automation. The platform allows users to easily train and deploy AI networks, making advanced machine vision more accessible.",
+        "tag": "Traineeship"
+      }
     }
   }
 }
