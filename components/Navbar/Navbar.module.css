@@ -27,7 +27,7 @@
   align-items: center;
   gap: 0.65rem;
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 700;
 }
 

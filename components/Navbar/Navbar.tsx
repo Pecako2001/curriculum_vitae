@@ -46,7 +46,7 @@ export default function Navbar() {
         {/* Brand */}
         <a href="/" className={classes.brand}>
           <img src="/Icon.png" alt="Logo" className={classes.brandLogo} />
-          <span className={classes.brandText}>Koen&nbsp;van&nbsp;Wijlick</span>
+          <span className={classes.brandText}>Personal&nbsp;Profile&nbsp;</span>
         </a>
 
         {/* Links */}
