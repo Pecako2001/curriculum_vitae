@@ -20,7 +20,11 @@ export const metadata = {
   description: "Curriculum Vitae Koen van Wijlick",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" {...mantineHtmlProps}>
       <head>
@@ -39,7 +43,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <MantineProvider theme={theme}>
           <AppShell
-            navbar={
+            navbar={{ width: 260, breakpoint: "sm" }}
+            header={{ height: 60 }}
+            styles={{
+              main: {
+                background: "none",
+                minHeight: "100vh",
+                padding: rem(32),
+                paddingLeft: rem(300),
+                position: "relative",
+              },
+            }}
+          >
+            <AppShell.Header>
+              <header
+                style={{
+                  background: "rgba(255,255,255,0.6)",
+                  backdropFilter: "blur(8px)",
+                  boxShadow: "0 2px 8px #0001",
+                  padding: rem(16),
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  fontWeight: 700,
+                  fontSize: rem(22),
+                  letterSpacing: rem(1),
+                }}
+              >
+                Curriculum Vitae
+                <ColorSchemeToggle />
+              </header>
+            </AppShell.Header>
+            <AppShell.Navbar>
               <div
                 style={{
                   background: "rgba(255,255,255,0.6)",
@@ -105,36 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </Group>
                 </nav>
               </div>
-            }
-            header={
-              <header
-                style={{
-                  background: "rgba(255,255,255,0.6)",
-                  backdropFilter: "blur(8px)",
-                  boxShadow: "0 2px 8px #0001",
-                  padding: rem(16),
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  fontWeight: 700,
-                  fontSize: rem(22),
-                  letterSpacing: rem(1),
-                }}
-              >
-                Curriculum Vitae
-                <ColorSchemeToggle />
-              </header>
-            }
-            styles={{
-              main: {
-                background: "none",
-                minHeight: "100vh",
-                padding: rem(32),
-                paddingLeft: rem(300),
-                position: "relative",
-              },
-            }}
-          >
+            </AppShell.Navbar>
             <I18nClientProvider>
               <main>{children}</main>
             </I18nClientProvider>

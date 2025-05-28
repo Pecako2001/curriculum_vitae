@@ -98,12 +98,7 @@ export default function Introduction() {
           </Button>
         </Group>
 
-        <Group
-          justify="center"
-          mt="lg"
-          gap="xs"
-          className={styles.socials}
-        >
+        <Group justify="center" mt="lg" gap="xs" className={styles.socials}>
           <a href="mailto:koenvanwijlick@gmail.com" aria-label="Email">
             <IconMail size={26} />
           </a>
