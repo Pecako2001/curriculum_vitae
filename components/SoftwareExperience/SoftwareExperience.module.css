@@ -45,6 +45,7 @@
 .headingSecondary {
   font-family: "Bebas Neue", "Oswald", sans-serif;
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--text-color);
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
@@ -60,6 +61,7 @@
   position: relative;
   margin-bottom: 0.85rem;
   line-height: 1.5;
+  color: var(--small-text);
   font-size: 1.05rem;
 }
 
