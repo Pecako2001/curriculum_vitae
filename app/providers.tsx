@@ -7,7 +7,9 @@ import {
   useContext,
   ReactNode,
 } from "react";
+import { MantineProvider } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
+import { theme as mantineThemeConfig } from "../theme";
 
 // Define the shape of the theme context
 interface ThemeContextType {
@@ -30,26 +32,29 @@ export function useTheme() {
 
 // ThemeProvider component
 export default function Providers({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<"theme-dark" | "theme-light">(() => {
+  const [colorScheme, setColorScheme] = useState<"dark" | "light">(() => {
     if (typeof window !== "undefined") {
       const storedTheme = localStorage.getItem("runevolve-theme");
       if (storedTheme === "theme-light" || storedTheme === "theme-dark") {
-        return storedTheme;
+        return storedTheme === "theme-dark" ? "dark" : "light";
       }
-      return document.body.classList.contains("theme-light")
-        ? "theme-light"
-        : "theme-dark";
+      return document.body.classList.contains("theme-light") ? "light" : "dark";
     }
-    return "theme-dark"; // Default for SSR
+    return "dark"; // Default for SSR
   });
 
+  const theme = colorScheme === "dark" ? "theme-dark" : "theme-light";
+
   useEffect(() => {
-    document.body.classList.remove("theme-dark", "theme-light");
+    document.body.classList.remove("theme-dark", "theme-light", "dark");
     document.body.classList.add(theme);
+    if (colorScheme === "dark") {
+      document.body.classList.add("dark");
+    }
     if (typeof window !== "undefined") {
       localStorage.setItem("runevolve-theme", theme);
     }
-  }, [theme]);
+  }, [colorScheme, theme]);
 
   // Global listener for React hydration errors
   useEffect(() => {
@@ -69,16 +74,21 @@ export default function Providers({ children }: { children: ReactNode }) {
   }, []);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "theme-dark" ? "theme-light" : "theme-dark"));
+    setColorScheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
   const setThemeMode = (mode: "theme-dark" | "theme-light") => {
-    setTheme(mode);
+    setColorScheme(mode === "theme-dark" ? "dark" : "light");
   };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setThemeMode }}>
-      {children}
+      <MantineProvider
+        forceColorScheme={colorScheme}
+        theme={mantineThemeConfig}
+      >
+        {children}
+      </MantineProvider>
     </ThemeContext.Provider>
   );
 }

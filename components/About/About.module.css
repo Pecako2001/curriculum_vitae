@@ -1,11 +1,11 @@
 
 /* Section wrapper */
 .wrapper {
-    background: var(--bg-dark);
+    background: transparent;
     padding: clamp(4rem, 8vw, 7rem) 1rem;
     display: flex;
     justify-content: center;
-    color: #f5f5f5;
+    color: var(--light-text);
   }
   
   .inner {

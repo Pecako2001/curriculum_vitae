@@ -33,11 +33,13 @@
 /* ──────── RIGHT : CONTENT ────────*/
 .content {
   flex: 1 1 50%;
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: clamp(3rem, 6vw, 6rem) var(--gap-inline);
-  background: var(--dark-bg);
+  background: var(--bg-color);
   color: var(--light-text);
   gap: 1.75rem;
 }
@@ -48,6 +50,7 @@
   font-size: clamp(3.5rem, 8vw, 7rem);
   line-height: 0.9;
   margin: 0;
+  color: var(--light-text);
   padding-left: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.015em;
@@ -60,6 +63,7 @@
 
 .subtitle {
   padding-left: 2rem;
+  color: var(--light-text);
   max-width: 38ch;
   font-size: clamp(1rem, 1.4vw + 0.8rem, 1.3rem);
   line-height: 1.6;
@@ -86,7 +90,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #d3d3d3;
+  background: var(--social-bg);
   transition: transform 0.18s ease, background 0.18s ease;
 }
 
@@ -167,7 +171,7 @@
 /* Animate gradient inside highlight on hover */
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .highlight {
-    background: linear-gradient(128deg, #ff512f, #dd2476, var(--accent));
+    background: linear-gradient(128deg, var(--gradient-start), var(--gradient-end), var(--accent));
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -189,7 +193,6 @@
   left: 0;
   width: 100%;
   height: clamp(4rem, 8vw, 6rem);
-  background: linear-gradient(transparent, var(--dark-bg));
   pointer-events: none;
 }
 

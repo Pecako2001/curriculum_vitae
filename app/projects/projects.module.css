@@ -1,8 +1,8 @@
 /* SECTION */
 .wrapper {
-    background: var(--bg-dark);
+    background: var(--bg-color);
     padding: clamp(4rem, 7vw, 6rem) 1rem;
-    color: #f5f5f5;
+    color: var(--light-text);
     overflow: hidden;
   }
   
@@ -63,7 +63,7 @@
     border-radius: 50%;
     background: var(--accent);
     font-weight: 700;
-    color: #0d0d0d;
+    color: var(--bg-dark);
     z-index: 2;
     box-shadow: 0 0 0 6px rgb(224 108 52 / 20%);
   }
@@ -86,7 +86,7 @@
     margin: 0 0 0.35rem;
     font-size: 1.4rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-color);
   }
   
   .cardTag {
@@ -133,7 +133,7 @@
       gap: 1rem;
     }
     .entry::before {
-      left: 0;
+      left: 8px;
       transform: translate(-50%, -50%);
     }
     .card {

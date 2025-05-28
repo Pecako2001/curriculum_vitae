@@ -1,10 +1,10 @@
 /* SECTION WRAPPER */
 .wrapper {
-  background: var(--bg-dark);
+  background: transparent;
   padding: clamp(4rem, 7vw, 6rem) 1rem;
   display: flex;
   justify-content: center;
-  color: #f5f5f5;
+  color: var(--light-text);
 }
 
 /* Card / form */
@@ -36,7 +36,7 @@
 .inputRoot .mantine-Input-input {
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.25);
-  color: #fff;
+  color: var(--text-color);
 }
 
 .inputRoot .mantine-Input-input:focus-within {
@@ -46,11 +46,11 @@
 /* Submit button accent */
 .submitBtn {
   background: var(--accent);
-  color: #fff;
+  color: var(--text-color);
   transition: background 0.25s ease;
 }
 .submitBtn:hover {
-  background: #f07d46;
+  background: var(--accent-hover);
 }
 
 /* Decorative blurred gradient behind card */

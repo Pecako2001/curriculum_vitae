@@ -12,39 +12,19 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import styles from "./Introduction.module.css";
 
-const LANGS = [
-  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
-  { code: "en", label: "English", flag: "🇬🇧" },
-];
-
 export default function Introduction() {
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language || "nl";
+  const { t } = useTranslation();
 
   const cvPdf = "/Koen_van_Wijlick_CV_EN.pdf";
 
   return (
     <section id="intro" className={styles.wrapper}>
-      {/* Language switcher */}
-      <nav className={styles.langSwitcher} aria-label="Language switcher">
-        {LANGS.map((lang) => (
-          <button
-            key={lang.code}
-            onClick={() => i18n.changeLanguage(lang.code)}
-            className={`${styles.langBtn} ${
-              currentLang === lang.code ? styles.langActive : ""
-            }`}
-            aria-label={lang.label}
-            type="button"
-          >
-            <span>{lang.flag}</span>
-          </button>
-        ))}
-      </nav>
-
       {/* Left – full‑bleed photo (swap src for your own) */}
       <div className={styles.image} aria-hidden="true">
-        <img src="/personal_image.jpeg" alt="Mountain landscape with Koen looking ahead" />
+        <img
+          src="/personal_image.jpeg"
+          alt="Mountain landscape with Koen looking ahead"
+        />
       </div>
 
       {/* Right – content */}
@@ -56,22 +36,34 @@ export default function Introduction() {
         className={styles.content}
       >
         <h1 className={styles.title}>
-          {t("intro.greeting", "Hi, I’m")} {" "}
+          {t("intro.greeting", "Hi, I’m")}{" "}
           <span className={styles.highlight}>Koen van Wijlick</span>
         </h1>
 
         <p className={styles.subtitle}>
           {t(
             "intro.subtitle",
-            "Mechatronics graduate & AI engineer building autonomous greenhouse robots."
+            "Mechatronics graduate & AI engineer building autonomous greenhouse robots.",
           )}
         </p>
 
         <Group className={styles.buttons} gap="sm">
-          <Button variant="light" radius="xl" component="a" href="#career" size="md">
+          <Button
+            variant="light"
+            radius="xl"
+            component="a"
+            href="#career"
+            size="md"
+          >
             {t("intro.viewJourney", "View my journey")}
           </Button>
-          <Button variant="default" radius="xl" component="a" href={cvPdf} size="md">
+          <Button
+            variant="default"
+            radius="xl"
+            component="a"
+            href={cvPdf}
+            size="md"
+          >
             {t("intro.downloadCV", "Download CV")}
           </Button>
           <Button
@@ -116,7 +108,9 @@ export default function Introduction() {
         animate={{ y: [0, 14, 0] }}
         transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
       >
-        <span className={styles.arrowText}>{t("intro.takeRoad", "Scroll for more")}</span>
+        <span className={styles.arrowText}>
+          {t("intro.takeRoad", "Scroll for more")}
+        </span>
         <svg
           width="32"
           height="32"

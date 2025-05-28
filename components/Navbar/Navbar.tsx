@@ -10,22 +10,27 @@ import {
   Burger,
   Stack,
   Menu,
+  Divider,
 } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { useDisclosure } from "@mantine/hooks";
-import {
-  IconChevronDown,
-  IconBrandLinkedin,
-} from "@tabler/icons-react";
+import { IconChevronDown, IconBrandLinkedin } from "@tabler/icons-react";
 import classes from "./Navbar.module.css";
 import { useTheme } from "../../app/providers";
 
 const LINKS = [
+  { label: "HOME", href: "/" },
   { label: "PROJECTS", href: "/projects" },
-  { label: "CONTACT", href: "/contact" },
+  // Link to the contact section on the homepage
+  { label: "CONTACT", href: "/#contact" },
 ];
 
-const SOCIALS = [{ href: "https://www.linkedin.com", Icon: IconBrandLinkedin }];
+const SOCIALS = [
+  {
+    href: "https://www.linkedin.com/in/koen-van-wijlick-00b820204/",
+    Icon: IconBrandLinkedin,
+  },
+];
 
 const LANGS = [
   { code: "nl", label: "Nederlands", flag: "🇳🇱" },
@@ -51,7 +56,8 @@ export default function Navbar() {
       target="_blank"
       rel="noopener noreferrer"
       variant="subtle"
-      color="gray.0"
+      color={theme === "theme-light" ? "#202124" : "#ffffff"}
+      aria-label="LinkedIn"
     >
       <Icon size={20} />
     </ActionIcon>
@@ -60,29 +66,32 @@ export default function Navbar() {
   const themeLabel = theme === "theme-light" ? "Light" : "Dark";
 
   return (
-    <Box component="header" w="100%">
+    <Box component="header" w="100%" className={classes.navbar}>
       <Flex w="100%">
-        <Flex
-          flex={1}
-          bg="gray.0"
-          px="md"
-          py="sm"
-          align="center"
-          justify="space-between"
-        >
+        <Flex flex={1} px="md" py="sm" align="center" justify="space-between">
           <a href="/" className={classes.brand}>
             <img src="/Icon.png" alt="Logo" height={32} />
-            <span className={classes.brandText}>Ciriculum vitea</span>
+            <Box visibleFrom="sm" className={classes.brandText}>
+              Ciriculum vitea
+            </Box>
+            <Box hiddenFrom="sm" className={classes.brandText}>
+              CV
+            </Box>
           </a>
           <Group gap="md" visibleFrom="sm">
             {navLinks}
           </Group>
         </Flex>
-        <Flex bg="dark.7" px="md" py="sm" align="center" gap="xs">
+        <Flex px="md" py="sm" align="center" gap="xs">
           <Group gap="xs" visibleFrom="sm" c="gray.0">
             {icons}
           </Group>
-          <nav className={classes.langSwitcher} aria-label="Language switcher">
+          <Box
+            component="nav"
+            className={classes.langSwitcher}
+            aria-label="Language switcher"
+            visibleFrom="sm"
+          >
             {LANGS.map((lang) => (
               <button
                 key={lang.code}
@@ -96,45 +105,32 @@ export default function Navbar() {
                 {lang.flag}
               </button>
             ))}
-          </nav>
-          <Menu>
-            <Menu.Target>
-              <Button
-                className={classes.themeButton}
-                rightSection={<IconChevronDown size={14} />}
-              >
-                {themeLabel}
-              </Button>
-            </Menu.Target>
-            <Menu.Dropdown className={classes.dropdown}>
-              <Menu.Item onClick={() => setThemeMode("theme-light")}>
-                Light
-              </Menu.Item>
-              <Menu.Item onClick={() => setThemeMode("theme-dark")}>
-                Dark
-              </Menu.Item>
-            </Menu.Dropdown>
-          </Menu>
-          <Button
-            component="a"
-            href="/list-your-property"
-            variant="outline"
-            color="gray.0"
-            visibleFrom="sm"
-            style={{
-              fontWeight: 700,
-              textTransform: "uppercase",
-              borderColor: "white",
-              color: "white",
-            }}
-          >
-            ADD A LISTING
-          </Button>
+          </Box>
+          <Box visibleFrom="sm">
+            <Menu>
+              <Menu.Target>
+                <Button
+                  className={classes.themeButton}
+                  rightSection={<IconChevronDown size={14} />}
+                >
+                  {themeLabel}
+                </Button>
+              </Menu.Target>
+              <Menu.Dropdown className={classes.dropdown}>
+                <Menu.Item onClick={() => setThemeMode("theme-light")}>
+                  Light
+                </Menu.Item>
+                <Menu.Item onClick={() => setThemeMode("theme-dark")}>
+                  Dark
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+          </Box>
           <Burger
             opened={opened}
             onClick={toggle}
             hiddenFrom="sm"
-            color="white"
+            color={theme === "theme-light" ? "#202124" : "#ffffff"}
           />
         </Flex>
       </Flex>
@@ -144,7 +140,8 @@ export default function Navbar() {
         onClose={close}
         hiddenFrom="sm"
         size="100%"
-        p="md"
+        py="md"
+        px={0}
       >
         <Stack gap="md">
           {LINKS.map((link) => (
@@ -158,7 +155,6 @@ export default function Navbar() {
             </a>
           ))}
           <Group gap="xs" mt="md">
-            {icons}
             <Menu>
               <Menu.Target>
                 <Button
@@ -205,6 +201,10 @@ export default function Navbar() {
                 {lang.flag}
               </button>
             ))}
+          </Group>
+          <Divider my="sm" />
+          <Group gap="xs" justify="center">
+            {icons}
           </Group>
         </Stack>
       </Drawer>

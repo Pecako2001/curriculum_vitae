@@ -2,10 +2,10 @@
 .wrapper {
   position: relative;
   padding: clamp(4rem, 7vw, 6rem) 1rem;
-  background: var(--bg-dark);
+  background: transparent;
   display: flex;
   justify-content: center;
-  color: #f5f5f5;
+  color: var(--light-text);
 }
 
 /* Blurred decorative background (optional) */
@@ -45,6 +45,7 @@
 .headingSecondary {
   font-family: "Bebas Neue", "Oswald", sans-serif;
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--text-color);
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
@@ -60,11 +61,12 @@
   position: relative;
   margin-bottom: 0.85rem;
   line-height: 1.5;
+  color: var(--small-text);
   font-size: 1.05rem;
 }
 
 .listItem strong {
-  color: #fff;
+  color: var(--text-color);
 }
 
 .listItem::before {

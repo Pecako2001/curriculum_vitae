@@ -167,9 +167,7 @@ function TimelineEntry({ entry, index }: { entry: Entry; index: number }) {
         <Title order={3} className={classes.title}>
           {entry.label}
         </Title>
-        {entry.sub && (
-          <Text className={classes.subtitle}>{entry.sub}</Text>
-        )}
+        {entry.sub && <Text className={classes.subtitle}>{entry.sub}</Text>}
         {entry.info && (
           <Text className={classes.description}>{entry.info}</Text>
         )}

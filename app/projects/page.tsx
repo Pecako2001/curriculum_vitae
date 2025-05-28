@@ -1,13 +1,6 @@
 // components/ProjectsTimeline/ProjectsTimeline.tsx
 "use client";
-import {
-  Badge,
-  Button,
-  Group,
-  Paper,
-  Text,
-  ActionIcon,
-} from "@mantine/core";
+import { Badge, Button, Group, Paper, Text, ActionIcon } from "@mantine/core";
 import {
   IconWorld,
   IconBrandGithub,
@@ -26,7 +19,7 @@ export interface Project {
   linkedin?: string;
 }
 
-export const projects: Project[] = [
+const projects: Project[] = [
   {
     title: "Curriculum Vitae Website",
     description:
@@ -77,15 +70,19 @@ export const projects: Project[] = [
   },
 ];
 
-/* Sort projects by year DESC */
 const sorted = [...projects].sort((a, b) => b.year - a.year);
 
-export default function ProjectsTimeline() {
+export default function ProjectsPage() {
   return (
     <section id="projects" className={classes.wrapper}>
       <div className={classes.container}>
-        {/* Back button */}
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: "2rem" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "2rem",
+          }}
+        >
           <Button component="a" href="/" variant="light" radius="xl">
             Back to main page
           </Button>
