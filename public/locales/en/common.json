@@ -120,6 +120,33 @@
   },
   "projects": {
     "heading": "My Projects",
-    "back": "Back to main page"
+    "back": "Back to main page",
+    "items": {
+      "cvsite": {
+        "title": "Curriculum Vitae Website",
+        "description": "The CV website is an interactive and responsive portfolio built using Next.js and the Mantine UI library, designed to showcase my professional experience, projects, and skills in a modern and user-friendly format. It features dynamic sections for education, work history, technical skills, and personal projects, all presented with smooth animations and clean design. The site includes downloadable documents, live project links, and a contact form, making it both informative and engaging. With a focus on performance and accessibility, this project also serves as a practical demonstration of my frontend development abilities and attention to user experience.",
+        "tag": "Web Project"
+      },
+      "runEvolve": {
+        "title": "Run Evolve Application",
+        "description": "One of my passions is running. My interest in artificial intelligence inspired me to create a personal running companion—an application that analyzes my performance to provide insights and predict my best times. It also generates personalized training plans tailored to my abilities and progress. I use this project as a testing ground for newly released AI models and neural networks, allowing me to explore the latest advancements in a practical and meaningful way.",
+        "tag": "In Progress"
+      },
+      "growbot": {
+        "title": "Growbot",
+        "description": "The GrowBot is an autonomous greenhouse robot designed to optimize crop growth through real-time data collection and AI analysis. It navigates independently between plant rows, measuring environmental factors like temperature, humidity, and soil moisture. Using computer vision and machine learning, it assesses plant health, detects issues early, and tracks growth. Based on this data, it suggests or triggers adjustments to improve growing conditions. GrowBot supports sustainable agriculture by enabling precise, data-driven cultivation and reducing manual intervention.",
+        "tag": "Graduation Project"
+      },
+      "greenhouseAutomation": {
+        "title": "Advancements in Greenhouse Automation",
+        "description": "This machine vision system was developed as part of research into automated harvesting of bell peppers. It uses computer vision techniques and deep learning models to detect and localize ripe peppers in real-time from RGB images. The system was trained to identify different ripeness stages. Built using frameworks like YOLO, OpenCV, the project demonstrates practical application of AI in agriculture, contributing to more efficient and selective harvesting processes in controlled environments such as greenhouses.",
+        "tag": "Minor A Systems"
+      },
+      "aiDetection": {
+        "title": "AI Detection",
+        "description": "During my internship at Mechatronic Machinery, I developed an AI-powered platform for object detection and localization, earning a final grade of 9.0. The system enables robots to identify and accurately locate objects for automated picking tasks, opening new possibilities in smart industrial automation. The platform allows users to easily train and deploy AI networks, making advanced machine vision more accessible.",
+        "tag": "Traineeship"
+      }
+    }
   }
 }
