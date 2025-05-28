@@ -1,5 +1,4 @@
 import {
-  AspectRatio,
   Badge,
   Container,
   Button,
@@ -90,8 +89,8 @@ export default function ProjectsPage() {
             <Badge variant="light" mt="xs" mb="sm">
               {project.tag}
             </Badge>
-            {project.video && (
-              project.video.match(/\.(jpeg|jpg|png|gif|webp)$/i) ? (
+            {project.video &&
+              (project.video.match(/\.(jpeg|jpg|png|gif|webp)$/i) ? (
                 <img
                   src={project.video}
                   alt={project.title}
@@ -117,8 +116,7 @@ export default function ProjectsPage() {
                   <source src={project.video} type="video/mp4" />
                   <track kind="captions" />
                 </video>
-              )
-            )}
+              ))}
             <Text>{project.description}</Text>
             {(project.website || project.github || project.linkedin) && (
               <Group mt="sm" gap="xs">
