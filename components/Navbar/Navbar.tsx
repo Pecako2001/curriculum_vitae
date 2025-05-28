@@ -82,7 +82,12 @@ export default function Navbar() {
           <Group gap="xs" visibleFrom="sm" c="gray.0">
             {icons}
           </Group>
-          <nav className={classes.langSwitcher} aria-label="Language switcher">
+          <Box
+            component="nav"
+            className={classes.langSwitcher}
+            aria-label="Language switcher"
+            visibleFrom="sm"
+          >
             {LANGS.map((lang) => (
               <button
                 key={lang.code}
@@ -96,30 +101,32 @@ export default function Navbar() {
                 {lang.flag}
               </button>
             ))}
-          </nav>
-          <Menu>
-            <Menu.Target>
-              <Button
-                className={classes.themeButton}
-                rightSection={<IconChevronDown size={14} />}
-              >
-                {themeLabel}
-              </Button>
-            </Menu.Target>
-            <Menu.Dropdown className={classes.dropdown}>
-              <Menu.Item onClick={() => setThemeMode("theme-light")}>
-                Light
-              </Menu.Item>
-              <Menu.Item onClick={() => setThemeMode("theme-dark")}>
-                Dark
-              </Menu.Item>
-            </Menu.Dropdown>
-          </Menu>
+          </Box>
+          <Box visibleFrom="sm">
+            <Menu>
+              <Menu.Target>
+                <Button
+                  className={classes.themeButton}
+                  rightSection={<IconChevronDown size={14} />}
+                >
+                  {themeLabel}
+                </Button>
+              </Menu.Target>
+              <Menu.Dropdown className={classes.dropdown}>
+                <Menu.Item onClick={() => setThemeMode("theme-light")}>
+                  Light
+                </Menu.Item>
+                <Menu.Item onClick={() => setThemeMode("theme-dark")}>
+                  Dark
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+          </Box>
           <Burger
             opened={opened}
             onClick={toggle}
             hiddenFrom="sm"
-            color="white"
+            color={theme === "theme-light" ? "#202124" : "#ffffff"}
           />
         </Flex>
       </Flex>
