@@ -9,11 +9,16 @@ import {
   Group,
   Burger,
   Stack,
+  Menu,
 } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { useDisclosure } from "@mantine/hooks";
-import { IconBrandLinkedin } from "@tabler/icons-react";
+import {
+  IconChevronDown,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
 import classes from "./Navbar.module.css";
+import { useTheme } from "../../app/providers";
 
 const LINKS = [
   { label: "PROJECTS", href: "/projects" },
@@ -29,9 +34,9 @@ const LANGS = [
 
 export default function Navbar() {
   const [opened, { toggle, close }] = useDisclosure(false);
+  const { theme, setThemeMode } = useTheme();
   const { i18n } = useTranslation();
   const currentLang = i18n.language || "nl";
-
   const navLinks = LINKS.map((link) => (
     <a key={link.href} href={link.href} className={classes.link}>
       {link.label}
@@ -51,6 +56,8 @@ export default function Navbar() {
       <Icon size={20} />
     </ActionIcon>
   ));
+
+  const themeLabel = theme === "theme-light" ? "Light" : "Dark";
 
   return (
     <Box component="header" w="100%">
@@ -90,6 +97,24 @@ export default function Navbar() {
               </button>
             ))}
           </nav>
+          <Menu>
+            <Menu.Target>
+              <Button
+                className={classes.themeButton}
+                rightSection={<IconChevronDown size={14} />}
+              >
+                {themeLabel}
+              </Button>
+            </Menu.Target>
+            <Menu.Dropdown className={classes.dropdown}>
+              <Menu.Item onClick={() => setThemeMode("theme-light")}>
+                Light
+              </Menu.Item>
+              <Menu.Item onClick={() => setThemeMode("theme-dark")}>
+                Dark
+              </Menu.Item>
+            </Menu.Dropdown>
+          </Menu>
           <Button
             component="a"
             href="/list-your-property"
@@ -134,6 +159,34 @@ export default function Navbar() {
           ))}
           <Group gap="xs" mt="md">
             {icons}
+            <Menu>
+              <Menu.Target>
+                <Button
+                  className={classes.themeButton}
+                  rightSection={<IconChevronDown size={14} />}
+                >
+                  {themeLabel}
+                </Button>
+              </Menu.Target>
+              <Menu.Dropdown className={classes.dropdown}>
+                <Menu.Item
+                  onClick={() => {
+                    setThemeMode("theme-light");
+                    close();
+                  }}
+                >
+                  Light
+                </Menu.Item>
+                <Menu.Item
+                  onClick={() => {
+                    setThemeMode("theme-dark");
+                    close();
+                  }}
+                >
+                  Dark
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
           </Group>
           <Group gap="xs">
             {LANGS.map((lang) => (
