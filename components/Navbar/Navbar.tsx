@@ -79,10 +79,11 @@ export default function Navbar() {
           </Group>
 
           {/* Language */}
-          <div className="langSwitcher" visibleFrom="md">
+          <Group className="langSwitcher" visibleFrom="md">
             {LANGS.map((lang) => (
               <button
                 key={lang.code}
+                type="button"
                 onClick={() => i18n.changeLanguage(lang.code)}
                 className={`${classes.langBtn} ${
                   currentLang === lang.code ? classes.langActive : ""
@@ -92,13 +93,16 @@ export default function Navbar() {
                 {lang.flag}
               </button>
             ))}
-          </div>
+          </Group>
 
           {/* Theme */}
           <button
             className={classes.themeBtn}
+            type="button"
             onClick={() =>
-              setThemeMode(theme === "theme-dark" ? "theme-light" : "theme-dark")
+              setThemeMode(
+                theme === "theme-dark" ? "theme-light" : "theme-dark",
+              )
             }
             aria-label="Toggle theme"
           >
@@ -134,6 +138,7 @@ export default function Navbar() {
             {LANGS.map((lang) => (
               <button
                 key={lang.code}
+                type="button"
                 onClick={() => {
                   i18n.changeLanguage(lang.code);
                   close();
@@ -166,7 +171,9 @@ export default function Navbar() {
           <Button
             variant="outline"
             onClick={() => {
-              setThemeMode(theme === "theme-dark" ? "theme-light" : "theme-dark");
+              setThemeMode(
+                theme === "theme-dark" ? "theme-light" : "theme-dark",
+              );
               close();
             }}
           >
