@@ -43,7 +43,23 @@ export default function RootLayout({
       >
         <MantineProvider theme={theme} defaultColorScheme="auto">
           <AppShell
-            navbar={
+            navbar={{
+              width: 260,
+              breakpoint: "sm",
+              collapsed: { desktop: false, mobile: false },
+            }}
+            header={{ height: 64, collapsed: false, offset: false }}
+            styles={{
+              main: {
+                background: "none",
+                minHeight: "100vh",
+                padding: rem(32),
+                paddingLeft: rem(300),
+                position: "relative",
+              },
+            }}
+          >
+            <AppShell.Navbar>
               <div
                 style={{
                   background: "var(--surface-bg)",
@@ -109,8 +125,8 @@ export default function RootLayout({
                   </Group>
                 </nav>
               </div>
-            }
-            header={
+            </AppShell.Navbar>
+            <AppShell.Header>
               <header
                 style={{
                   background: "var(--surface-bg)",
@@ -133,17 +149,7 @@ export default function RootLayout({
                 </a>
                 <ColorSchemeToggle />
               </header>
-            }
-            styles={{
-              main: {
-                background: "none",
-                minHeight: "100vh",
-                padding: rem(32),
-                paddingLeft: rem(300),
-                position: "relative",
-              },
-            }}
-          >
+            </AppShell.Header>
             <I18nClientProvider>
               <main>{children}</main>
             </I18nClientProvider>
