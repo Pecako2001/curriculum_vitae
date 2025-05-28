@@ -91,10 +91,10 @@ export default function ModernTimeline() {
         info: t("career.work3.info"),
       },
       {
-        id: "work4",
-        label: t("career.work4.label"),
-        sub: t("career.work4.sub"),
-        info: t("career.work4.info"),
+        id: "work5",
+        label: t("career.work5.label"),
+        sub: t("career.work5.sub"),
+        info: t("career.work5.info"),
       },
       {
         id: "cat-vol",
@@ -102,10 +102,10 @@ export default function ModernTimeline() {
         type: "category",
       },
       {
-        id: "work5",
-        label: t("career.work5.label"),
-        sub: t("career.work5.sub"),
-        info: t("career.work5.info"),
+        id: "work4",
+        label: t("career.work4.label"),
+        sub: t("career.work4.sub"),
+        info: t("career.work4.info"),
       },
       {
         id: "cat-more",
