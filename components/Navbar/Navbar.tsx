@@ -69,7 +69,12 @@ export default function Navbar() {
         >
           <a href="/" className={classes.brand}>
             <img src="/Icon.png" alt="Logo" height={32} />
-            <span className={classes.brandText}>Ciriculum vitea</span>
+            <Box visibleFrom="sm" className={classes.brandText}>
+              Ciriculum vitea
+            </Box>
+            <Box hiddenFrom="sm" className={classes.brandText}>
+              CV
+            </Box>
           </a>
           <Group gap="md" visibleFrom="sm">
             {navLinks}
