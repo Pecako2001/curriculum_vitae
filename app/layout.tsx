@@ -8,11 +8,16 @@ import {
   ActionIcon,
   Loader,
   AppShell,
+  Group,
+  Avatar,
+  Text,
+  rem,
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import Providers from "./providers";
 import Navbar from "../components/Navbar/Navbar"; // Your custom Navbar component
 import I18nClientProvider from "../components/I18nClientProvider";
+import { ColorSchemeToggle } from "../components/ColorSchemeToggle/ColorSchemeToggle";
 
 // Mantine theme configuration
 export const mantineThemeConfig = createTheme({
@@ -35,26 +40,6 @@ export const mantineThemeConfig = createTheme({
   },
 });
 
-// function AppLayout({ children }: { children: React.ReactNode }) {
-//   return (
-//     <AppShell
-//       header={
-//         <AppShell.Header>
-//           <Navbar />
-//         </AppShell.Header>
-//       }
-//       styles={{
-//         main: {
-//           padding: "32px",
-//           minHeight: "100vh",
-//           background: "none",
-//         },
-//       }}
-//     >
-//       {children}
-//     </AppShell>
-//   );
-// }
 
 function AppLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -63,7 +48,17 @@ function AppLayout({ children }: { children: React.ReactNode }) {
         <Navbar />
       </AppShell.Header>
 
-      <AppShell.Main style={{ paddingTop: 60 }}>{children}</AppShell.Main>
+      <AppShell.Main
+        style={{
+          background: "none",
+          minHeight: "100vh",
+          padding: rem(32),
+          paddingLeft: rem(300),
+          position: "relative",
+        }}
+      >
+        {children}
+      </AppShell.Main>
     </AppShell>
   );
 }
@@ -77,7 +72,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Curriculum Vitae</title>
-        <link rel="icon" href="/avatar.png" />
+        <link rel="icon" href="/avatar.jpg" />
       </head>
       <body>
         <I18nClientProvider>
