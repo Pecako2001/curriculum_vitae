@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Curriculum Vitae</title>
-        <link rel="icon" href="/avatar.png" />
+        <link rel="icon" href="/avatar.jpg" />
       </head>
       <body>
         <I18nClientProvider>
