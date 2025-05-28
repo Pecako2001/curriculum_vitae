@@ -2,6 +2,7 @@ import {
   AspectRatio,
   Badge,
   Container,
+  Button,
   Group,
   Paper,
   SimpleGrid,
@@ -74,6 +75,11 @@ const projects: Project[] = [
 export default function ProjectsPage() {
   return (
     <Container size="lg" py="xl">
+      <Group justify="center" mb="md">
+        <Button component="a" href="/" variant="light" radius="xl">
+          Back to main page
+        </Button>
+      </Group>
       <Title order={1} ta="center" mb="xl">
         My Projects
       </Title>
