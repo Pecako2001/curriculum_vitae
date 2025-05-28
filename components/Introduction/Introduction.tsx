@@ -49,30 +49,35 @@ export default function Introduction() {
 
         <Group className={styles.buttons} gap="sm">
           <Button
+            className={styles.journeyBtn}
             variant="light"
             radius="xl"
+            size="md"
             component="a"
             href="#career"
-            size="md"
+            leftSection={<IconRocket size={18} />}
+            style={{ textTransform: "none" }}
           >
             {t("intro.viewJourney", "View my journey")}
           </Button>
           <Button
             variant="default"
             radius="xl"
+            size="md"
             component="a"
             href={cvPdf}
-            size="md"
+            download
           >
             {t("intro.downloadCV", "Download CV")}
           </Button>
           <Button
-            leftSection={<IconRocket size={18} />}
+            className={styles.projectsBtn}
             variant="outline"
             radius="xl"
+            size="md"
             component="a"
             href="/projects"
-            size="md"
+            leftSection={<IconRocket size={18} />}
           >
             {t("intro.viewProjects", "Projects")}
           </Button>

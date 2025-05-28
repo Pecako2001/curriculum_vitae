@@ -14,7 +14,7 @@ interface Entry {
   type?: "category";
 }
 
-const bgArr = ["/background1.png", "/background2.png", "/background3.png"];
+const bgArr = ["/background1.png"];
 
 export default function ModernTimeline() {
   const { t } = useTranslation();

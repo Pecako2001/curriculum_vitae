@@ -7,6 +7,7 @@ import { Notifications } from "@mantine/notifications";
 import Providers from "./providers";
 import Navbar from "../components/Navbar/Navbar"; // Your custom Navbar component
 import I18nClientProvider from "../components/I18nClientProvider";
+import { useTranslation } from "react-i18next";
 
 function AppLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,11 +26,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { i18n } = useTranslation();
   return (
-    <html lang="en">
+    <html lang={i18n.language}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Curriculum Vitae</title>
-        <link rel="icon" href="/avatar.png" />
+        <link rel="icon" href="/Icon.png" />
       </head>
       <body>
         <I18nClientProvider>
