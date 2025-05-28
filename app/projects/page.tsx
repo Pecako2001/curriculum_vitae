@@ -16,7 +16,7 @@ import {
   IconBrandLinkedin,
 } from "@tabler/icons-react";
 
-interface Project {
+export interface Project {
   title: string;
   description: string;
   tag: string;
@@ -26,7 +26,7 @@ interface Project {
   linkedin?: string;
 }
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     title: "Curriculum Vitae Website",
     description:

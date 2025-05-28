@@ -3,6 +3,7 @@ import About from "@/components/About/About";
 import Skills from "@/components/Skills/Skills";
 import ModernTimeline from "@/components/CV/ModernTimeline/ModernTimeline";
 import SoftwareExperience from "@/components/SoftwareExperience/SoftwareExperience";
+import ProjectsPreview from "@/components/Homepage/ProjectsPreview";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <ModernTimeline />
       <SoftwareExperience />
       <Skills />
+      <ProjectsPreview />
     </>
   );
 }
