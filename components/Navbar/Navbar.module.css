@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  height: var(--nav-height);
+  height: 4rem;
   backdrop-filter: blur(var(--nav-blur));
   background: var(--nav-bg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
