@@ -6,14 +6,14 @@
   width: 100%;
   min-height: 100vh;
   justify-content: center;
-  background: linear-gradient(135deg, #e3f2fd 0%, #fffde7 100%);
+  background: var(--bg-gradient);
   padding: 4rem 1rem;
 }
 
 .card {
   max-width: 720px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.65);
+  background: var(--surface-bg);
   backdrop-filter: blur(8px);
   border-radius: 26px;
   padding: 3rem 2.5rem;
@@ -42,9 +42,15 @@
 }
 
 @keyframes moveGradient {
-  0% { background-position: 0 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0 50%; }
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
 
 .subtitle {
@@ -65,11 +71,11 @@
 }
 
 .socials {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 .arrowWrap {
   display: flex;
   flex-direction: column;
@@ -95,25 +101,27 @@
 }
 
 .langSwitcher {
-    width: 100%;
-    margin-bottom: 0.5rem;
-    justify-content: center;
-    display: flex;
-    gap: 0.5rem;
-  }
-  
-  .langBtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.2rem 0.5rem;
-    font-size: 1.2rem;
-    opacity: 0.6;
-    transition: opacity 0.2s, border-bottom 0.2s;
-    border-bottom: 2px solid transparent;
-  }
-  
-  .langActive {
-    opacity: 1;
-    border-bottom: 2px solid #1976d2;
-  }
+  width: 100%;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+  opacity: 0.6;
+  transition:
+    opacity 0.2s,
+    border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.langActive {
+  opacity: 1;
+  border-bottom: 2px solid #1976d2;
+}
