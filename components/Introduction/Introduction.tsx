@@ -28,7 +28,7 @@ export default function Introduction() {
   return (
     <section id="intro" className={styles.wrapper}>
       {/* Language Switcher */}
-      <Group justifyContent="flex-end" className={styles.langSwitcher}>
+      <Group justify="flex-end" className={styles.langSwitcher}>
         {LANGS.map((lang) => (
           <button
             key={lang.code}
@@ -99,7 +99,7 @@ export default function Introduction() {
         </Group>
 
         <Group
-          justifyContent="center"
+          justify="center"
           mt="lg"
           gap="xs"
           className={styles.socials}
