@@ -31,7 +31,7 @@ const projects: Project[] = [
     description:
       "Interactive website built with Next.js and Mantine to present my professional experience.",
     tag: "Web Project",
-    video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    video: "./Frontpage_1.jpeg",
     website: "https://koenvanwijlick.com",
     github: "https://github.com/Pecako2001/curriculum_vitae",
     linkedin: "https://www.linkedin.com/in/koen-van-wijlick-00b820204",
