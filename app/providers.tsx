@@ -44,8 +44,11 @@ export default function Providers({ children }: { children: ReactNode }) {
   });
 
   useEffect(() => {
-    document.body.classList.remove("theme-dark", "theme-light");
+    document.body.classList.remove("theme-dark", "theme-light", "dark");
     document.body.classList.add(theme);
+    if (theme === "theme-dark") {
+      document.body.classList.add("dark");
+    }
     if (typeof window !== "undefined") {
       localStorage.setItem("runevolve-theme", theme);
     }

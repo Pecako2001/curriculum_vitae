@@ -86,7 +86,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #d3d3d3;
+  background: var(--social-bg);
   transition: transform 0.18s ease, background 0.18s ease;
 }
 
@@ -167,7 +167,7 @@
 /* Animate gradient inside highlight on hover */
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .highlight {
-    background: linear-gradient(128deg, #ff512f, #dd2476, var(--accent));
+    background: linear-gradient(128deg, var(--gradient-start), var(--gradient-end), var(--accent));
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;

@@ -5,7 +5,7 @@
   background: var(--bg-dark);
   display: flex;
   justify-content: center;
-  color: #f5f5f5;
+  color: var(--light-text);
 }
 
 /* Blurred decorative background (optional) */
@@ -64,7 +64,7 @@
 }
 
 .listItem strong {
-  color: #fff;
+  color: var(--white);
 }
 
 .listItem::before {
