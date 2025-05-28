@@ -83,21 +83,31 @@ MAVO (Lower General Secondary Education)
 
 ---
 
-## 📜 Certifications
+## 💻 Software Experience and Certifications
+
+### 📜 Certifications
 
 - **SolidWorks Mechanical Design Associate**  
-  Issued May 2019 | Credential ID: C-5SUCTJW3L4
+  Issued: May 2019 – No Expiration  
+  Credential ID: C-5SUCTJW3L4  
+  Validated proficiency in 3D CAD modeling, part design, assembly creation, and technical drawings using SolidWorks.
 
 - **Basisveiligheid VCA**  
-  Issued March 2018 | Expires March 2028 | Credential ID: 541448.05174689
+  Issued: March 2018 – Expires: March 2028  
+  Credential ID: 541448.05174689  
+  Certified in occupational health and safety for working in high-risk environments according to Dutch/Belgian VCA standards.
 
----
+### 🛠️ Software & Programming Skills
 
-## ⚙️ Skills
-
-- **Programming & AI**: Python, C++, ROS 2, YOLO, OpenCV  
-- **Dev Tools**: Docker, Git, Linux  
-- **CAD & PLC**: SolidWorks, AutoCAD, Siemens PLC (TIA Portal)  
+- **Python, C++** – Robotics, AI, computer vision (YOLO, ROS 2, OpenCV)
+- **React, TypeScript, JavaScript** – Modern frontend development for web applications
+- **PostgreSQL, SQLite** – Relational database design, querying, and integration
+- **FastAPI, MQTT** – Backend API development and real-time communication
+- **Docker, Git, Linux** – Containerization, version control, and system operations
+- **Siemens PLC (TIA Portal)** – Industrial automation and control systems
+- **SolidWorks, Inventor, AutoCAD** – 3D modeling and 2D schematic design
+- **Redis, WebSockets** – In-memory data storage and live data streaming
+- **Next.js, MUI (Material UI)** – Full-stack web applications and component-driven UI design
 
 ---
 
