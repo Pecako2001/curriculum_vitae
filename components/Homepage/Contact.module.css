@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
