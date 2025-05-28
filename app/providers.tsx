@@ -13,6 +13,7 @@ import { notifications } from "@mantine/notifications";
 interface ThemeContextType {
   theme: "theme-dark" | "theme-light";
   toggleTheme: () => void;
+  setThemeMode: (mode: "theme-dark" | "theme-light") => void;
 }
 
 // Create the context with a default undefined value
@@ -71,8 +72,12 @@ export default function Providers({ children }: { children: ReactNode }) {
     setTheme((prev) => (prev === "theme-dark" ? "theme-light" : "theme-dark"));
   };
 
+  const setThemeMode = (mode: "theme-dark" | "theme-light") => {
+    setTheme(mode);
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, setThemeMode }}>
       {children}
     </ThemeContext.Provider>
   );
