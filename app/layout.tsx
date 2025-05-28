@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang={i18n.language}>
       <head>
         <title>Curriculum Vitae</title>
-        <link rel="icon" href="/avatar.jpg" />
+        <link rel="icon" href="/Icon.png" />
       </head>
       <body>
         <I18nClientProvider>

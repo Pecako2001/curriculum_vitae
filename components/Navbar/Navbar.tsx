@@ -1,33 +1,31 @@
+// components/Navbar/Navbar.tsx (refactor)
 "use client";
-
+import React from "react";
 import {
   ActionIcon,
-  Box,
-  Button,
-  Drawer,
-  Flex,
-  Group,
   Burger,
+  Drawer,
+  Group,
   Stack,
-  Menu,
-  Divider,
+  Button,
 } from "@mantine/core";
-import { useTranslation } from "react-i18next";
 import { useDisclosure } from "@mantine/hooks";
 import { IconChevronDown, IconBrandLinkedin } from "@tabler/icons-react";
 import classes from "./Navbar.module.css";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../../app/providers";
 
 const LINKS = [
-  { label: "HOME", href: "/" },
-  { label: "PROJECTS", href: "/projects" },
-  { label: "CONTACT", href: "/#contact" },
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const SOCIALS = [
   {
     href: "https://www.linkedin.com/in/koen-van-wijlick-00b820204/",
     Icon: IconBrandLinkedin,
+    label: "LinkedIn",
   },
 ];
 
@@ -37,61 +35,51 @@ const LANGS = [
 ];
 
 export default function Navbar() {
-  const [opened, { toggle, close }] = useDisclosure(false);
+  const [opened, { open, close }] = useDisclosure(false);
   const { theme, setThemeMode } = useTheme();
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
   const currentLang = i18n.language || "nl";
-  const navLinks = LINKS.map((link) => (
-    <a key={link.href} href={link.href} className={classes.link}>
-      {t(link.key)}
-    </a>
-  ));
-
-  const icons = SOCIALS.map(({ href, Icon }) => (
-    <ActionIcon
-      key={href}
-      component="a"
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      variant="subtle"
-      color={theme === "theme-light" ? "#202124" : "#ffffff"}
-      aria-label="LinkedIn"
-    >
-      <Icon size={20} />
-    </ActionIcon>
-  ));
-
-  const themeLabel =
-    theme === "theme-light" ? t("navbar.light") : t("navbar.dark");
 
   return (
-    <Box component="header" w="100%" className={classes.navbar}>
-      <Flex w="100%">
-        <Flex flex={1} px="md" py="sm" align="center" justify="space-between">
-          <a href="/" className={classes.brand}>
-            <img src="/Icon.png" alt="Logo" height={32} />
-            <Box visibleFrom="sm" className={classes.brandText}>
-              {t("navbar.brandFull")}
-            </Box>
-            <Box hiddenFrom="sm" className={classes.brandText}>
-              {t("navbar.brandShort")}
-            </Box>
-          </a>
-          <Group gap="md" visibleFrom="sm">
-            {navLinks}
+    <header className={classes.navbar}>
+      <div className={classes.inner}>
+        {/* Brand */}
+        <a href="/" className={classes.brand}>
+          <img src="/Icon.png" alt="Logo" className={classes.brandLogo} />
+          <span className={classes.brandText}>Koen&nbsp;van&nbsp;Wijlick</span>
+        </a>
+
+        {/* Links */}
+        <nav className={classes.links} aria-label="Primary">
+          {LINKS.map((link) => (
+            <a key={link.href} href={link.href} className={classes.link}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Controls */}
+        <div className={classes.controls}>
+          {/* Social */}
+          <Group gap="xs" className="socials" visibleFrom="md">
+            {SOCIALS.map(({ href, Icon, label }) => (
+              <ActionIcon
+                key={href}
+                component="a"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="subtle"
+                aria-label={label}
+                style={{ color: "#fff" }}
+              >
+                <Icon size={20} />
+              </ActionIcon>
+            ))}
           </Group>
-        </Flex>
-        <Flex px="md" py="sm" align="center" gap="xs">
-          <Group gap="xs" visibleFrom="sm" c="gray.0">
-            {icons}
-          </Group>
-          <Box
-            component="nav"
-            className={classes.langSwitcher}
-            aria-label="Language switcher"
-            visibleFrom="sm"
-          >
+
+          {/* Language */}
+          <div className="langSwitcher" visibleFrom="md">
             {LANGS.map((lang) => (
               <button
                 key={lang.code}
@@ -100,91 +88,49 @@ export default function Navbar() {
                   currentLang === lang.code ? classes.langActive : ""
                 }`}
                 aria-label={lang.label}
-                type="button"
               >
                 {lang.flag}
               </button>
             ))}
-          </Box>
-          <Box visibleFrom="sm">
-            <Menu>
-              <Menu.Target>
-                <Button
-                  className={classes.themeButton}
-                  rightSection={<IconChevronDown size={14} />}
-                >
-                  {themeLabel}
-                </Button>
-              </Menu.Target>
-              <Menu.Dropdown className={classes.dropdown}>
-                <Menu.Item onClick={() => setThemeMode("theme-light")}>
-                  {t("navbar.light")}
-                </Menu.Item>
-                <Menu.Item onClick={() => setThemeMode("theme-dark")}>
-                  {t("navbar.dark")}
-                </Menu.Item>
-              </Menu.Dropdown>
-            </Menu>
-          </Box>
+          </div>
+
+          {/* Theme */}
+          <button
+            className={classes.themeBtn}
+            onClick={() =>
+              setThemeMode(theme === "theme-dark" ? "theme-light" : "theme-dark")
+            }
+            aria-label="Toggle theme"
+          >
+            {theme === "theme-dark" ? "Dark" : "Light"}
+            <IconChevronDown size={14} />
+          </button>
+
+          {/* Burger */}
           <Burger
             opened={opened}
-            onClick={toggle}
-            hiddenFrom="sm"
-            color={theme === "theme-light" ? "#202124" : "#ffffff"}
+            onClick={open}
+            className={classes.burger}
+            aria-label="Open navigation drawer"
+            color="#fff"
           />
-        </Flex>
-      </Flex>
+        </div>
+      </div>
 
-      <Drawer
-        opened={opened}
-        onClose={close}
-        hiddenFrom="sm"
-        size="100%"
-        py="md"
-        px={0}
-      >
-        <Stack gap="md">
+      {/* Mobile drawer */}
+      <Drawer opened={opened} onClose={close} size="100%" padding="md">
+        <Stack gap="lg">
           {LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={close}
-              className={classes.link}
+              className={classes.drawerLink}
             >
-              {t(link.key)}
+              {link.label}
             </a>
           ))}
-          <Group gap="xs" mt="md">
-            <Menu>
-              <Menu.Target>
-                <Button
-                  className={classes.themeButton}
-                  rightSection={<IconChevronDown size={14} />}
-                >
-                  {themeLabel}
-                </Button>
-              </Menu.Target>
-              <Menu.Dropdown className={classes.dropdown}>
-                <Menu.Item
-                  onClick={() => {
-                    setThemeMode("theme-light");
-                    close();
-                  }}
-                >
-                  {t("navbar.light")}
-                </Menu.Item>
-                <Menu.Item
-                  onClick={() => {
-                    setThemeMode("theme-dark");
-                    close();
-                  }}
-                >
-                  {t("navbar.dark")}
-                </Menu.Item>
-              </Menu.Dropdown>
-            </Menu>
-          </Group>
-          <Group gap="xs">
+          <Group gap="sm">
             {LANGS.map((lang) => (
               <button
                 key={lang.code}
@@ -196,18 +142,38 @@ export default function Navbar() {
                   currentLang === lang.code ? classes.langActive : ""
                 }`}
                 aria-label={lang.label}
-                type="button"
               >
                 {lang.flag}
               </button>
             ))}
           </Group>
-          <Divider my="sm" />
-          <Group gap="xs" justify="center">
-            {icons}
+          <Group gap="xs">
+            {SOCIALS.map(({ href, Icon, label }) => (
+              <ActionIcon
+                key={href}
+                component="a"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="subtle"
+                aria-label={label}
+                style={{ color: "#fff" }}
+              >
+                <Icon size={22} />
+              </ActionIcon>
+            ))}
           </Group>
+          <Button
+            variant="outline"
+            onClick={() => {
+              setThemeMode(theme === "theme-dark" ? "theme-light" : "theme-dark");
+              close();
+            }}
+          >
+            Toggle Theme
+          </Button>
         </Stack>
       </Drawer>
-    </Box>
+    </header>
   );
 }
