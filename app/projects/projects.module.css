@@ -34,6 +34,7 @@
     background: var(--accent);
     opacity: 0.9;
     z-index: 0;
+    pointer-events: none;
   }
   
   /* ENTRY WRAPPER */
@@ -66,6 +67,7 @@
     color: var(--bg-dark);
     z-index: 2;
     box-shadow: 0 0 0 6px rgb(224 108 52 / 20%);
+    pointer-events: none;
   }
   
   /* CARD */
@@ -126,6 +128,7 @@
     .container::before {
       left: 8px;
       transform: none;
+      pointer-events: none;
     }
     .entry,
     .left {

@@ -18,6 +18,7 @@
   background: var(--accent);
   opacity: 0.9;
   z-index: 0;
+  pointer-events: none;
 }
 
 /* fixed blurred topo / texture bg (optional) */
@@ -47,6 +48,7 @@
   background: var(--accent);
   box-shadow: 0 0 0 4px rgb(224 108 52 / 15%);
   z-index: 2;
+  pointer-events: none;
 }
 
 /*──── left/right alignment */
@@ -135,6 +137,7 @@
     left: -5px;
     right: auto;
     top: 0.25rem;
+    pointer-events: none;
   }
 
   .card {
@@ -144,6 +147,7 @@
   .wrapper::before {
     left: 8px;
     transform: none;
+    pointer-events: none;
   }
 }
 
