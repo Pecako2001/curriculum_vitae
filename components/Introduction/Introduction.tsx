@@ -12,14 +12,8 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import styles from "./Introduction.module.css";
 
-const LANGS = [
-  { code: "nl", label: "Nederlands", flag: "🇳🇱" },
-  { code: "en", label: "English", flag: "🇬🇧" },
-];
-
 export default function Introduction() {
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language || "nl";
+  const { t } = useTranslation();
 
   const cvPdf = "/Koen_van_Wijlick_CV_EN.pdf";
 
