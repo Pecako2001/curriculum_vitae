@@ -22,7 +22,12 @@ const LINKS = [
   { label: "CONTACT", href: "/contact" },
 ];
 
-const SOCIALS = [{ href: "https://www.linkedin.com/in/koen-van-wijlick-00b820204/", Icon: IconBrandLinkedin }];
+const SOCIALS = [
+  {
+    href: "https://www.linkedin.com/in/koen-van-wijlick-00b820204/",
+    Icon: IconBrandLinkedin,
+  },
+];
 
 const LANGS = [
   { code: "nl", label: "Nederlands", flag: "🇳🇱" },

@@ -76,7 +76,13 @@ export default function ProjectsPage() {
   return (
     <section id="projects" className={classes.wrapper}>
       <div className={classes.container}>
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: "2rem" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "2rem",
+          }}
+        >
           <Button component="a" href="/" variant="light" radius="xl">
             Back to main page
           </Button>
