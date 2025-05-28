@@ -1,13 +1,6 @@
 // components/ProjectsTimeline/ProjectsTimeline.tsx
 "use client";
-import {
-  Badge,
-  Button,
-  Group,
-  Paper,
-  Text,
-  ActionIcon,
-} from "@mantine/core";
+import { Badge, Button, Group, Paper, Text, ActionIcon } from "@mantine/core";
 import {
   IconWorld,
   IconBrandGithub,
@@ -85,7 +78,13 @@ export default function ProjectsTimeline() {
     <section id="projects" className={classes.wrapper}>
       <div className={classes.container}>
         {/* Back button */}
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: "2rem" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "2rem",
+          }}
+        >
           <Button component="a" href="/" variant="light" radius="xl">
             Back to main page
           </Button>

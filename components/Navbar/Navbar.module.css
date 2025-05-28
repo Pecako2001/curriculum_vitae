@@ -7,11 +7,11 @@
 }
 
 .link:hover {
-  color: var(--primary);
+  color: var(--primary-color);
 }
 
 .brand {
-  color:black;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   gap: 0.5rem;
