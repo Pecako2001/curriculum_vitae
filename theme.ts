@@ -1,7 +1,22 @@
 "use client";
 
-import { createTheme } from "@mantine/core";
+import { createTheme, rem } from "@mantine/core";
 
 export const theme = createTheme({
-  /* Put your mantine theme override here */
+  fontFamily: "'Inter', sans-serif",
+  headings: {
+    fontFamily: "'Inter', sans-serif",
+    fontWeight: "600",
+  },
+  primaryColor: "blue",
+  defaultRadius: "md",
+  components: {
+    Paper: {
+      defaultProps: {
+        shadow: "sm",
+        radius: "md",
+        p: "md",
+      },
+    },
+  },
 });
