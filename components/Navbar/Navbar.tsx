@@ -138,7 +138,8 @@ export default function Navbar() {
         onClose={close}
         hiddenFrom="sm"
         size="100%"
-        p="md"
+        py="md"
+        px={0}
       >
         <Stack gap="md">
           {LINKS.map((link) => (
