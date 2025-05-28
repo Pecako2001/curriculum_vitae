@@ -10,6 +10,7 @@ import {
   Burger,
   Stack,
   Menu,
+  Divider,
 } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { useDisclosure } from "@mantine/hooks";
@@ -55,7 +56,8 @@ export default function Navbar() {
       target="_blank"
       rel="noopener noreferrer"
       variant="subtle"
-      color="gray.0"
+      color={theme === "theme-light" ? "#202124" : "#ffffff"}
+      aria-label="LinkedIn"
     >
       <Icon size={20} />
     </ActionIcon>
@@ -153,7 +155,6 @@ export default function Navbar() {
             </a>
           ))}
           <Group gap="xs" mt="md">
-            {icons}
             <Menu>
               <Menu.Target>
                 <Button
@@ -200,6 +201,10 @@ export default function Navbar() {
                 {lang.flag}
               </button>
             ))}
+          </Group>
+          <Divider my="sm" />
+          <Group gap="xs" justify="center">
+            {icons}
           </Group>
         </Stack>
       </Drawer>
