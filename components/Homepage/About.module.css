@@ -1,0 +1,18 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bio {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.socials a {
+  color: inherit;
+  transition: transform 0.15s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-2px);
+}
