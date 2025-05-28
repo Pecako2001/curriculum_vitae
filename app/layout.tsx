@@ -38,10 +38,10 @@ export default function RootLayout({
       <body
         style={{
           minHeight: "100vh",
-          background: "linear-gradient(135deg, #e3f2fd 0%, #fffde7 100%)",
+          background: "var(--bg-gradient)",
         }}
       >
-        <MantineProvider theme={theme}>
+        <MantineProvider theme={theme} defaultColorScheme="auto">
           <AppShell
             navbar={{
               width: 260,
@@ -62,7 +62,7 @@ export default function RootLayout({
             <AppShell.Navbar>
               <div
                 style={{
-                  background: "rgba(255,255,255,0.6)",
+                  background: "var(--surface-bg)",
                   backdropFilter: "blur(8px)",
                   borderRight: "1px solid rgba(0,0,0,0.1)",
                   boxShadow: "2px 0 16px #0001",
@@ -129,7 +129,7 @@ export default function RootLayout({
             <AppShell.Header>
               <header
                 style={{
-                  background: "rgba(255,255,255,0.6)",
+                  background: "var(--surface-bg)",
                   backdropFilter: "blur(8px)",
                   boxShadow: "0 2px 8px #0001",
                   padding: rem(16),
