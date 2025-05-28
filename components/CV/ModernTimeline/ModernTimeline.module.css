@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   padding: clamp(4rem, 8vw, 6rem) 1rem;
-  background: var(--bg-color);
+  background: transparent;
   color: var(--text-color);
   overflow: hidden;
 }
