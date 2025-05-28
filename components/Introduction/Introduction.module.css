@@ -50,6 +50,7 @@
   font-size: clamp(3.5rem, 8vw, 7rem);
   line-height: 0.9;
   margin: 0;
+  color: var(--light-text);
   padding-left: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.015em;
@@ -62,6 +63,7 @@
 
 .subtitle {
   padding-left: 2rem;
+  color: var(--light-text);
   max-width: 38ch;
   font-size: clamp(1rem, 1.4vw + 0.8rem, 1.3rem);
   line-height: 1.6;
