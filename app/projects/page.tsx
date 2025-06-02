@@ -1,11 +1,14 @@
 // components/ProjectsTimeline/ProjectsTimeline.tsx
 "use client";
-import { Badge, Button, Group, Paper, Text, ActionIcon } from "@mantine/core";
+import { Badge, Group, Paper, Text, ActionIcon } from "@mantine/core";
 import {
   IconWorld,
   IconBrandGithub,
   IconBrandLinkedin,
+  IconChevronDown,
+  IconChevronUp,
 } from "@tabler/icons-react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import classes from "./projects.module.css";
 
@@ -58,6 +61,11 @@ const sorted = [...projects].sort((a, b) => b.year - a.year);
 
 export default function ProjectsPage() {
   const { t } = useTranslation();
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  function toggle(key: string) {
+    setExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
+  }
   return (
     <section id="projects" className={classes.wrapper}>
       <div className={classes.container}>
@@ -93,7 +101,22 @@ export default function ProjectsPage() {
                     </video>
                   ))}
 
-                <Text>{t(`projects.items.${project.key}.description`)}</Text>
+                <Text lineClamp={expanded[project.key] ? undefined : 3}>
+                  {t(`projects.items.${project.key}.description`)}
+                </Text>
+                <ActionIcon
+                  className={classes.iconBtn}
+                  onClick={() => toggle(project.key)}
+                  variant="subtle"
+                  aria-label={expanded[project.key] ? "Collapse" : "Expand"}
+                  size="lg"
+                >
+                  {expanded[project.key] ? (
+                    <IconChevronUp size={24} />
+                  ) : (
+                    <IconChevronDown size={24} />
+                  )}
+                </ActionIcon>
 
                 {(project.website || project.github || project.linkedin) && (
                   <Group className={classes.actions} gap="xs">
