@@ -42,7 +42,11 @@ export default function Skills() {
     <section id="skills" className={classes.wrapper}>
       <div className={classes.inner}>
         {skills.map((skill) => (
-          <article key={skill.category} className={classes.skillCard}>
+          <article
+            key={skill.category}
+            className={classes.skillCard}
+            style={{ minWidth: "250px" }}
+          >
             <h3 className={classes.skillTitle}>{t(skill.category)}</h3>
             <div className={classes.tagGrid}>
               {skill.tools.map((tool) => (
