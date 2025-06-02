@@ -1,6 +1,6 @@
 // components/ProjectsTimeline/ProjectsTimeline.tsx
 "use client";
-import { Badge, Button, Group, Paper, Text, ActionIcon } from "@mantine/core";
+import { Badge, Group, Paper, Text, ActionIcon } from "@mantine/core";
 import {
   IconWorld,
   IconBrandGithub,
@@ -34,21 +34,21 @@ const projects: Project[] = [
   {
     key: "growbot",
     year: 2025,
-    video: "./Frontpage_1.jpeg",
+    video: "/Frontpage_1.jpeg",
     linkedin:
       "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_growbot-autonomous-greenhouse-robot",
   },
   {
     key: "greenhouseAutomation",
     year: 2024,
-    video: "./videos/Minor.mp4",
+    video: "/videos/Minor.mp4",
     linkedin:
       "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_met-trots-kan-ik-melden-dat-ik-mijn-onderzoek-activity-7209212549152567297-4tdb",
   },
   {
     key: "aiDetection",
     year: 2023,
-    video: "./videos/PRJ5_Traineeship.mp4",
+    video: "/videos/PRJ5_Traineeship.mp4",
     linkedin:
       "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_%F0%9D%91%BB%F0%9D%92%8A%F0%9D%92%86%F0%9D%92%8F-%F0%9D%92%8E%F0%9D%92%86%F0%9D%92%95-%F0%9D%92%86%F0%9D%92%86%F0%9D%92%8F-%F0%9D%92%88%F0%9D%92%93%F0%9D%92%8A%F0%9D%92%87%F0%9D%92%87%F0%9D%92%86%F0%9D%92%8D-inmiddels-activity-7160176481279557635-0XJ5",
   },
