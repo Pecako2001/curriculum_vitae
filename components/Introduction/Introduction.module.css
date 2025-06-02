@@ -143,6 +143,12 @@
     text-align: center;
     align-items: center;
   }
+  .title,
+  .subtitle,
+  .buttons,
+  .socials {
+    padding-left: 0;
+  }
   .buttons {
     justify-content: center;
   }
