@@ -1,7 +1,7 @@
 /* Section wrapper */
 .wrapper {
   position: relative;
-  padding: clamp(4rem, 7vw, 6rem) 1rem;
+  padding: clamp(4rem, 7vw, 6rem) 1.5rem;
   background: transparent;
   display: flex;
   justify-content: center;
@@ -85,7 +85,7 @@
 /* Responsive tweaks */
 @media (max-width: 576px) {
   .wrapper {
-    padding: 3rem 1rem;
+    padding: 3rem 1.5rem;
   }
   .listItem {
     font-size: 0.95rem;

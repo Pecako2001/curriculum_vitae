@@ -1,6 +1,7 @@
 // components/Introduction/Introduction.tsx
 "use client";
 import React from "react";
+import Link from "next/link";
 import { Button, Group } from "@mantine/core";
 import {
   IconBrandGithub,
@@ -75,7 +76,7 @@ export default function Introduction() {
             variant="outline"
             radius="xl"
             size="md"
-            component="a"
+            component={Link}
             href="/projects"
             leftSection={<IconRocket size={18} />}
           >
