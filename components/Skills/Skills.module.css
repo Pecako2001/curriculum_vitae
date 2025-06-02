@@ -10,39 +10,37 @@
 .inner {
   position: relative;
   z-index: 1;
-  max-width: 1080px;
+  max-width: 1200px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .skillCard {
+  position: relative;
   box-sizing: border-box;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.08),
-    rgba(255, 255, 255, 0.02)
-  );
+  background: var(--card-bg);
   border-radius: var(--card-radius);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 1.5rem 1.75rem;
+  padding: 1.75rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.8rem;
   box-shadow: 0 10px 32px rgb(0 0 0 / 0.35);
-  backdrop-filter: blur(8px);
-  transition: transform 0.25s ease;
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .skillCard:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--accent);
 }
 
 .skillTitle {
   font-family: "Bebas Neue", "Oswald", sans-serif;
-  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
   letter-spacing: 0.03em;
   margin: 0;
   color: var(--accent);
@@ -59,15 +57,16 @@
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 9999px;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.8rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
   line-height: 1.1;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  word-break: break-word;
 }
 
 @media (max-width: 576px) {
   .inner {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
