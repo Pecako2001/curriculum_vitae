@@ -42,13 +42,6 @@ const projects: Project[] = [
     github: "https://github.com/Pecako2001/run-evolve",
   },
   {
-    key: "growbot",
-    year: 2025,
-    video: "/Frontpage_1.jpeg",
-    linkedin:
-      "https://www.linkedin.com/posts/koen-van-wijlick-00b820204_growbot-autonomous-greenhouse-robot",
-  },
-  {
     key: "greenhouseAutomation",
     year: 2024,
     video: "/videos/Minor.mp4",
