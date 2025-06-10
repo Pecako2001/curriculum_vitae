@@ -4,6 +4,7 @@ import About from "@/components/About/About";
 import SoftwareExperience from "@/components/SoftwareExperience/SoftwareExperience";
 import Contact from "@/components/Homepage/Contact";
 import Skills from "@/components/Skills/Skills";
+import { Analytics } from '@vercel/analytics/next';
 
 export default function HomePage() {
   return (
