@@ -8,6 +8,7 @@ import Providers from "./providers";
 import Navbar from "../components/Navbar/Navbar"; // Your custom Navbar component
 import I18nClientProvider from "../components/I18nClientProvider";
 import { useTranslation } from "react-i18next";
+import { Analytics } from '@vercel/analytics/next';
 
 function AppLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Providers>
             <Notifications />
             <AppLayout>{children}</AppLayout>
+            <Analytics />
           </Providers>
         </I18nClientProvider>
       </body>
